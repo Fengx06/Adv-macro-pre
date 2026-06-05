@@ -88,7 +88,23 @@
   \setmainfont{TeX Gyre Termes}
 }
 
-\setsansfont{TeX Gyre Heros}
+\IfFontExistsTF{TeX Gyre Heros}{
+  \setsansfont{TeX Gyre Heros}
+}{
+  \IfFontExistsTF{Helvetica}{
+    \setsansfont{Helvetica}
+  }{
+    \IfFontExistsTF{Arial}{
+      \setsansfont{Arial}
+    }{
+      \setsansfont{texgyreheros-regular.otf}[
+        BoldFont=texgyreheros-bold.otf,
+        ItalicFont=texgyreheros-italic.otf,
+        BoldItalicFont=texgyreheros-bolditalic.otf
+      ]
+    }
+  }
+}
 
 \IfFontExistsTF{Georgia}{
   \newfontfamily\lingnanheadinglatinfont{Georgia}
@@ -96,18 +112,38 @@
   \IfFontExistsTF{Cambria}{
     \newfontfamily\lingnanheadinglatinfont{Cambria}
   }{
-    \newfontfamily\lingnanheadinglatinfont{TeX Gyre Heros}
+    \IfFontExistsTF{TeX Gyre Heros}{
+      \newfontfamily\lingnanheadinglatinfont{TeX Gyre Heros}
+    }{
+      \IfFontExistsTF{Helvetica}{
+        \newfontfamily\lingnanheadinglatinfont{Helvetica}
+      }{
+        \newfontfamily\lingnanheadinglatinfont{texgyreheros-regular.otf}[
+          BoldFont=texgyreheros-bold.otf,
+          ItalicFont=texgyreheros-italic.otf,
+          BoldItalicFont=texgyreheros-bolditalic.otf
+        ]
+      }
+    }
   }
 }
 \DeclareRobustCommand{\latinheading}[1]{\texorpdfstring{{\lingnanheadinglatinfont #1}}{#1}}
 
-\IfFontExistsTF{Cascadia Code}{
-  \setmonofont{Cascadia Code}
+\IfFontExistsTF{Menlo}{
+  \setmonofont{Menlo}
 }{
-  \IfFontExistsTF{Consolas}{
-    \setmonofont{Consolas}
+  \IfFontExistsTF{Monaco}{
+    \setmonofont{Monaco}
   }{
-    \setmonofont{Courier New}
+    \IfFontExistsTF{Cascadia Code}{
+      \setmonofont{Cascadia Code}
+    }{
+      \IfFontExistsTF{Consolas}{
+        \setmonofont{Consolas}
+      }{
+        \setmonofont{Latin Modern Mono}
+      }
+    }
   }
 }
 
@@ -117,55 +153,71 @@
   \setmathfont{texgyretermes-math.otf}
 }
 
-\IfFontExistsTF{KaiTi}{
-  \setCJKmainfont{KaiTi}[AutoFakeBold=2.0]
+\IfFontExistsTF{Kaiti SC}{
+  \setCJKmainfont{Kaiti SC}[AutoFakeBold=2.0]
 }{
-  \IfFontExistsTF{STKaiti}{
-    \setCJKmainfont{STKaiti}[AutoFakeBold=2.0]
+  \IfFontExistsTF{Songti SC}{
+    \setCJKmainfont{Songti SC}[AutoFakeBold=2.0]
   }{
-    \IfFontExistsTF{STFangsong}{
-      \setCJKmainfont{STFangsong}[AutoFakeBold=2.0]
+    \IfFontExistsTF{KaiTi}{
+      \setCJKmainfont{KaiTi}[AutoFakeBold=2.0]
     }{
-      \IfFontExistsTF{Microsoft YaHei}{
-        \setCJKmainfont{Microsoft YaHei}
+      \IfFontExistsTF{STKaiti}{
+        \setCJKmainfont{STKaiti}[AutoFakeBold=2.0]
       }{
-        \setCJKmainfont{FandolSong-Regular.otf}
+        \IfFontExistsTF{STFangsong}{
+          \setCJKmainfont{STFangsong}[AutoFakeBold=2.0]
+        }{
+          \IfFontExistsTF{Microsoft YaHei}{
+            \setCJKmainfont{Microsoft YaHei}
+          }{
+            \setCJKmainfont{FandolSong-Regular.otf}
+          }
+        }
       }
     }
   }
 }
 
-\IfFontExistsTF{STZhongsong}{
-  \setCJKsansfont{STZhongsong}[AutoFakeBold=2.0]
+\IfFontExistsTF{PingFang SC}{
+  \setCJKsansfont{PingFang SC}[AutoFakeBold=2.0]
 }{
-  \IfFontExistsTF{Source Han Serif SC}{
-    \setCJKsansfont{Source Han Serif SC}[AutoFakeBold=2.0]
+  \IfFontExistsTF{Heiti SC}{
+    \setCJKsansfont{Heiti SC}[AutoFakeBold=2.0]
   }{
-    \IfFontExistsTF{Microsoft YaHei}{
-      \setCJKsansfont{Microsoft YaHei}
+    \IfFontExistsTF{STZhongsong}{
+      \setCJKsansfont{STZhongsong}[AutoFakeBold=2.0]
     }{
-      \IfFontExistsTF{DengXian}{
-        \setCJKsansfont{DengXian}
+      \IfFontExistsTF{Source Han Serif SC}{
+        \setCJKsansfont{Source Han Serif SC}[AutoFakeBold=2.0]
       }{
-        \setCJKsansfont{FandolHei-Regular.otf}
+        \IfFontExistsTF{Microsoft YaHei}{
+          \setCJKsansfont{Microsoft YaHei}
+        }{
+          \setCJKsansfont{FandolHei-Regular.otf}
+        }
       }
     }
   }
 }
 
-\IfFontExistsTF{Microsoft YaHei}{
-  \setCJKmonofont{Microsoft YaHei}
+\IfFontExistsTF{PingFang SC}{
+  \setCJKmonofont{PingFang SC}
 }{
-  \IfFontExistsTF{DengXian}{
-    \setCJKmonofont{DengXian}
+  \IfFontExistsTF{Microsoft YaHei}{
+    \setCJKmonofont{Microsoft YaHei}
   }{
     \setCJKmonofont{FandolHei-Regular.otf}
   }
 }
 
-\IfFontExistsTF{Microsoft YaHei}{
-  \setCJKfallbackfamilyfont{\CJKsfdefault}{Microsoft YaHei}
-}{}
+\IfFontExistsTF{PingFang SC}{
+  \setCJKfallbackfamilyfont{\CJKsfdefault}{PingFang SC}
+}{
+  \IfFontExistsTF{Microsoft YaHei}{
+    \setCJKfallbackfamilyfont{\CJKsfdefault}{Microsoft YaHei}
+  }{}
+}
 \xeCJKsetup{AutoFallBack=true}
 
 % Basic Beamer style
