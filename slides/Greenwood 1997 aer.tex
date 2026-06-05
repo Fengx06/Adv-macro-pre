@@ -1,0 +1,745 @@
+\documentclass[aspectratio=169,10pt]{beamer}
+
+\usetheme{lingnan}
+
+\graphicspath{{../Long-Run Implications of Investment-Specific Technological Change/images/}}
+
+\makeatletter
+\renewcommand{\lingnansectionnav}{%
+  \hbox to \paperwidth{%
+    \lingnannavitem{1}{动机}{1}%
+    \lingnannavitem{2}{模型}{2}%
+    \lingnannavitem{3}{机制}{3}%
+    \lingnannavitem{4}{结果}{4}%
+    \lingnannavitem{5}{启示}{5}%
+  }%
+}
+\makeatother
+
+\title[\latinheading{Greenwood et al. (1997)}]{\latinheading{Long-Run Implications of\\Investment-Specific Technological Change}}
+\subtitle{\latinheading{Greenwood, Hercowitz and Krusell (AER, 1997)}}
+\author[Advanced Macro]{赵天驰、郑文绰、邝逸、陈宇新、陈致远}
+\institute{高级宏观经济学博士课程汇报}
+\date[2026-06-16]{2026 年 6 月 16 日}
+
+\newcommand{\paperfig}[3]{%
+  \begin{figure}
+    \centering
+    \includegraphics[width=#1\linewidth,height=0.56\textheight,keepaspectratio]{#2}
+    \caption{\scriptsize #3}
+  \end{figure}
+}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section{\latinheading{动机和背景}}
+
+\begin{frame}{典型事实：投资价格和占比的负向关系}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\linewidth}
+      \begin{itemize}
+        \item 设备价格越来也低，投资数量却越来越高
+      \end{itemize}
+      \paperfig{0.98}{fig1_investment_in_equipment.jpg}{Investment in Equipment}
+    \end{column}
+    \begin{column}{0.48\linewidth}
+      \begin{itemize}
+        \item 去除趋势后，负向的相关关系依然成立
+      \end{itemize}
+      \paperfig{0.98}{fig2_investment_hp_detrended.jpg}{Investment in Equipment, HP Detrended}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{传统模型：难以解释现有事实}
+
+  \begin{block}{现有事实}
+    \begin{itemize}
+      \item 设备（投资）相对价格上升（$p^i/p^c \uparrow$）
+      \item 设备（投资）占比下降（$I^i/Y \downarrow$）
+      \item 二者存在负向的相关性，是否可能来自于同一个因素的影响？
+    \end{itemize}
+  \end{block}
+  \begin{block}{传统模型局限：假设处于平衡增长路径上}
+    \begin{itemize}
+      \item 投资相对消费价格不变（公式 \ref{eq:pi=pc}）
+            $$ p^i_t = p^{c}_t $$
+      \item 投资占产出比重不变（公式 \ref{eq:ItYt}）
+            $$ \frac{I_t}{Y_t} =(g-1+\delta)\frac{K_{t}}{Y_t} $$
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{新的解释：投资专用技术进步}
+  \textbf{投资专用技术进步}（investment-specific）技术进步体现在新设备的质量提升和价格下降上。
+
+  % \begin{alertblock}{}
+  %   某种非对称的影响
+  % \end{alertblock}
+  % \begin{block}{论文要量化的问题}
+  %   美国战后产出每小时增长中，有多少来自 investment-specific technological change，有多少来自 neutral technological change？
+  % \end{block}
+  % \begin{itemize}
+  %   \item 识别来源：设备相对价格下降。
+  %   \item 理论工具：带有 vintage capital 直觉的一般均衡增长模型。
+  %   \item 定量对象：1954--1990 年美国长期增长经验。
+  % \end{itemize}
+\end{frame}
+
+\section{\latinheading{模型设定}}
+
+\begin{frame}{消费端}
+  \begin{block}{效用函数}
+    \begin{itemize}
+      \item 家庭最大化预期效用
+            \begin{equation}
+              \max \; \left[E\sum_{t=0}^{\infty}\beta^t U(c_t,l_t)\right].
+            \end{equation}
+      \item 效用由消费和劳动决定
+            \begin{equation}
+              U(c,l)=\theta \ln c+(1-\theta)\ln(1-l).
+            \end{equation}
+            \begin{itemize}
+              \item $c_t$：消费。
+              \item $l_t$：劳动投入，$1-l_t$ 是闲暇。
+            \end{itemize}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{生产端}
+
+
+  \begin{block}{生产函数}
+    \begin{equation}
+      \begin{gathered}
+        y = z \cdot \textcolor{red}{k_e^{\alpha_e}k_s^{\alpha_s}} \cdot l^{1-\alpha_e-\alpha_s}, \\
+        0 < \alpha_e+\alpha_s < 1.
+      \end{gathered}
+    \end{equation}
+
+    \begin{itemize}
+      \item $k_e$：设备资本 (equipment)，更新快、改进明显；如机器设备、计算机、生产线、运输设备。
+      \item $k_s$：结构资本 (structures)，更耐久、进步较慢；如厂房、办公楼、道路等建筑和基础设施。
+    \end{itemize}
+  \end{block}
+
+  % \begin{block}{市场出清}
+  %   \begin{equation}
+  %     y=c+i_e+i_s.
+  %   \end{equation}
+  % \end{block}
+
+  \keymessage{主要创新}{$k \to k_e, k_s$, 将设备资本和结构资本区分开来，允许它们承载不同的技术进步。}
+
+\end{frame}
+
+\begin{frame}{生产端}
+
+  \begin{block}{资本积累}
+    \begin{itemize}
+      \item 结构资本：基本上没有明显的技术进步，单位投资形成 $1$ 单位结构资本。
+            \begin{equation}
+              k_s'=(1-\delta_s)k_s+i_s
+            \end{equation}
+      \item \textbf{设备资本}：技术进步快，单位投资形成$q$ 单位设备资本。
+            \begin{equation}
+              k_e'=(1-\delta_e)k_e+ \textcolor{red}{q} \cdot i_e
+            \end{equation}
+            \begin{itemize}
+              \item $q$ 新一代产品的技术或效率（价格不变）
+              \item ${1}/{q}$ 新一代产品的价格（质量不变）
+            \end{itemize}
+      \item $\delta_s, \delta_e \in (0,1)$ 折旧率。
+    \end{itemize}
+  \end{block}
+
+
+\end{frame}
+
+\begin{frame}{政府}
+
+  \begin{block}{税收方程}
+
+    \begin{equation}
+      \tau=\tau_k(r_e k_e+r_s k_s)+\tau_l w l.
+    \end{equation}
+    \begin{itemize}
+      \item 政府对劳动和资本收入征税，税率分别为 $\tau_l$ 和 $\tau_k$。
+      \item $r_e$ 和 $r_s$ ：$k_e$和$k_s$的回报率。
+      \item $w$：劳动的工资率。
+      \item 政府不进行消费和借贷，只进行转移支付。
+    \end{itemize}
+  \end{block}
+
+  \keymessage{设置税收的目的}{校准现实经济：税收影响家庭的决策，进而影响资本积累和增长路径。}
+
+\end{frame}
+
+\begin{frame}{模型设定：为什么要和为什么能？}
+  \begin{block}{为什么要？}
+    对资本类型进行区分（加入 $q$）后，设备资本的效率增加时有：
+    \begin{itemize}
+      \item 设备的相对价格下降：
+            $$p^i_t \downarrow = \dfrac{p^c_t}{q \uparrow}$$
+      \item 设备的相对占比提高：
+            $$\frac{i_e}{y} \uparrow = (g-1+\delta_e)\frac{k_e}{y} \times q \uparrow$$
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{为什么能？}
+    \begin{itemize}
+      \item 认为资本的使用效率存在区别（厂房 vs 设备）。
+      \item 按照资本效率的变化速率，对资本进行区分。
+    \end{itemize}
+  \end{block}
+
+\end{frame}
+
+\section{模型求解与参数估计}
+\subsection{竞争均衡与平衡增路径}
+
+\begin{frame}{模型总结}
+  \begin{block}{消费者跨期效用最大化}
+    \begin{equation*}
+      \begin{aligned}
+        V(k_e, k_s; s, z, q)                  & = \max_{c, k'_e, k'_s, l} \left\{  U(c,l) + \beta E[V(k'_e, k'_s; s', z, q)] \right\}     \\
+        s.t. \quad c + \dfrac{k'_e}{q} + k'_s & = (1- \tau_k)\left[R_e(\lambda) k_e  + R_s (\lambda) k_s \right] + (1-\tau_l)W(\lambda) l \\
+                                              & + (1-\delta_e)\dfrac{k_e}{q} + (1-\delta_s)k_s + T(\lambda)
+      \end{aligned}
+    \end{equation*}
+  \end{block}
+
+  \begin{block}{厂商利润最大化}
+
+  \end{block}
+
+  \begin{block}{市场出清}
+
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{状态变量}
+    $$\lambda = (s, z, q), \qquad s\equiv(k_e, k_s)$$
+    \vspace{-0.5em}
+    \begin{itemize}
+      \item 当前状态主要由三个变量决定：$s$（资本存量），$z$:（TFP），$q$（设备效率）。
+      \item 当期状态将决定下一期状态：
+            \begin{itemize}
+              \item $s' \equiv S(\lambda) = (k'_e, k'_s) = (K_e(\lambda), K_s(\lambda)) $ 由资本积累方程决定。
+              \item $z'$ 和 $q'$ 由外生过程决定，增长率为 $\gamma_z$ 和 $\gamma_q$。
+            \end{itemize}
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{}
+    \begin{itemize}
+      \item 工资与利息：$w = W(\lambda)$，$r_e = R_e(\lambda)$，$r_s = R_s(\lambda)$，$\tau = T(\lambda)$ \footnote{注：$\tau$ 是变量净税收的金额，$\tau_k$ 和 $\tau_l$ 是参数税率。}
+      \item 资本/投资：$k'_e \equiv k_{e,t+1} = K_e(\lambda)$，$k'_s \equiv k_{s,t+1} = K_s(\lambda)$
+    \end{itemize}
+  \end{block}
+
+  % \begin{block}{内生变量}
+  %   \begin{itemize}
+  %     \item 工资率 $w = W(\lambda)$
+  %     \item 利息 $r_e = R_e(\lambda), r_s = R_s(\lambda)$
+  %     \item 税率 $\tau = T(\lambda)$
+  %   \end{itemize}
+  % \end{block}
+\end{frame}
+
+
+
+\begin{frame}{BGP 上的增长率}
+  \begin{equation}
+    \begin{aligned}
+      g   & =\gamma_z^{1/(1-\alpha_e-\alpha_s)}
+      \gamma_q^{\alpha_e/(1-\alpha_e-\alpha_s)}, \\[0.5em]
+      g_e & =\gamma_z^{1/(1-\alpha_e-\alpha_s)}
+      \gamma_q^{(1-\alpha_s)/(1-\alpha_e-\alpha_s)}.
+    \end{aligned}
+  \end{equation}
+  \begin{itemize}
+    \item $\gamma_z$ 通过中性生产率直接推动增长。
+    \item $\gamma_q$ 通过设备资本的产出份额 $\alpha_e$ 推动产出增长。
+    \item 因为 $g_e/g=\gamma_q$，设备资本增长快于总产出。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{为什么这能解释长期事实？}
+  \begin{itemize}
+    \item 当 $1/q$ 持续下降，新设备相对消费品越来越便宜。
+    \item 企业和家庭会选择更多设备投资，推动有效设备资本快速积累。
+    \item 因此模型同时解释：
+  \end{itemize}
+  \begin{block}{两个长期事实}
+    设备相对价格下降；设备投资/GNP 比率上升。
+  \end{block}
+\end{frame}
+
+\begin{frame}{租金下降与回报稳定并不矛盾}
+  \begin{itemize}
+    \item 随着有效设备资本变多，单位设备服务的租金价格下降。
+    \item 但设备购买价格 $1/q$ 也在下降。
+    \item 因此，用一单位消费品购买设备的投资回报仍可保持稳定。
+  \end{itemize}
+  \keymessage{经济学直觉}{设备“服务价格”下降，不代表投资设备不划算；因为设备本身也更便宜。}
+\end{frame}
+
+\begin{frame}{机制小结}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\linewidth}
+      \begin{block}{Neutral technological change}
+        \begin{itemize}
+          \item 直接提高所有生产效率。
+          \item 表现在 $z$ 的增长中。
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\linewidth}
+      \begin{alertblock}{Investment-specific change}
+        \begin{itemize}
+          \item 让新设备更便宜或更有效。
+          \item 表现在 $q$ 的增长中。
+        \end{itemize}
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+  \vspace{0.8em}
+  \keymessage{区别}{前者直接移动生产函数，后者必须通过投资 embodied in new equipment。}
+\end{frame}
+\subsection{参数估计}
+
+\begin{frame}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.37\linewidth}
+      \begin{block}{待估参数汇总（4/17）}
+        \begin{enumerate}
+          \item 家庭端：${\beta}, {\theta}$。
+          \item 生产端：$\mathhighlight{\delta_e, \delta_s}, {\alpha_e}, {\alpha_s}$。
+          \item 政府端：$\mathhighlight{\tau_l}, \tau_k$。
+          \item 期初值：$\hat{c}, {\hat{i}_e}, {\hat{i}_s}, {\hat y}, \hat{k}_e, \hat{k}_s$。
+          \item 增长率：$\mathhighlight{\gamma_q}, \gamma_z, g$。
+        \end{enumerate}
+      \end{block}
+      \begin{block}{内生变量汇总}
+        \begin{enumerate}
+          \item 家庭端：$c_t, l_t$
+          \item 生产端：$y_t, k_{e,t}, k_{s,t}$
+        \end{enumerate}
+      \end{block}
+    \end{column}
+    \begin{column}{0.57\linewidth}
+      \vspace{1em}
+      \begin{enumerate}
+        \item 技术进步（$\gamma$）：$\gamma_q = 1.032$
+              \begin{equation*}
+                \gamma_q = \dfrac{q_{t+1}}{q_t} =  \dfrac{\mathhighlight{p^{e}_{t}}}{\mathhighlight{p^{e}_{t+1}}}
+              \end{equation*}
+              $p^{e}_{t}$ 数据来源于 Gordon's equipment price index。
+        \item 折旧率（$\delta$）：$\delta_s = 0.056$，$\delta_e = 0.124$
+              \begin{equation*}
+                \mathhighlight{k_{t}} = (1-\delta) \mathhighlight{k_{t-1}}
+              \end{equation*}
+              $k_t$ 数据来源于 BEA。
+        \item 税率（$\tau$）：$\tau_l = 0.40$ \\
+              参考现有研究（Robert E. Lucas, 1990）。
+      \end{enumerate}
+
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}{参数核算}
+  \begin{center}
+    待估参数（7/17）：$\boxed{\mathhighlight{
+          \delta_e, \delta_s,  \tau_l, \gamma_q} \qquad \mathhighlight{\gamma_z, g, (\alpha_e+\alpha_s)} \qquad  \theta, \beta, \tau_k, \hat{i}_e, \hat{i}_s,\hat{k}_e, \hat{k}_s, \hat{y}, \hat{c} }$
+  \end{center}
+  \begin{itemize}
+    \item 平衡增长（$g = 1.24$）：年度 GNP 增长率数据。
+          \begin{equation*}
+            g = 1.24
+          \end{equation*}
+          % \item 劳动参与：$l = 0.24$，使用每周工作小时数占非睡眠时间的比例。
+    \item 资本份额（$\alpha_e+ \alpha_s = 0.30$）：资本收入份额数据。
+          \begin{equation*}
+            \alpha_e + \alpha_s = 0.30
+          \end{equation*}
+    \item 技术进步（$\gamma_z$）
+          \begin{equation*}
+            g = \gamma_z g^{\alpha_e+\alpha_s} \gamma_q^{\alpha_e} \Rightarrow
+            \gamma_z = \dfrac{\mathhighlight{g}^{1-\mathhighlight{(\alpha_e + \alpha_s)}}}{\mathhighlight{\gamma_{q}^{\alpha_e}}}
+          \end{equation*}
+
+
+          % \item 设备投资占比：$i_e/y = 0.073$，使用设备投资占 GNP 的比例。
+          % \item 结构投资占比：$i_s/y = 0.041$，使用结构投资占 GNP 的比例。
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{待估参数}
+  \begin{center}
+    待估参数（9/17）：$\boxed{\mathhighlight{
+          \delta_e, \delta_s,  \tau_l, \gamma_q,  (\alpha_e+\alpha_s), \gamma_z, g} \qquad \mathhighlight{\beta, \theta} \qquad  \tau_k, \hat{i}_e, \hat{i}_s,\hat{k}_e, \hat{k}_s, \hat{y}, \hat{c} }$
+  \end{center}
+
+  \begin{itemize}
+    \item 消费偏好（$\theta = 0.40$）：工作占非睡眠时间比例数据（$l = 0.24$）。
+          \begin{equation*}
+            \begin{aligned}
+              \dfrac{\partial U(c,l)}{\partial l} & = U_c(c,l)\frac{\partial c}{\partial l} + U_l(c,l)
+                                                  & = \dfrac{\theta}{c}(1-\tau_l) \dfrac{\partial y}{\partial l} - \dfrac{1-\theta}{1-l} = 0
+            \end{aligned}
+          \end{equation*}
+          \begin{equation*}
+            \Rightarrow \mathhighlight{l} = \mathhighlight{(1-\tau_l) (1-\alpha_e - \alpha_s)}  \dfrac{\theta\mathhighlight{(1-l)}}{(1-\theta)\mathhighlight{(c/y)}}
+          \end{equation*}
+    \item 时间偏好（$\beta = 0.95$）：税后资本回报率数据（$r_t = 0.07$）。
+          \vspace{0.2em}
+          \begin{equation*}
+            \begin{aligned}
+              U_{c}(c_t,l_t) = \beta U_{c}(c_{t+1},l_{t+1}) r_t \Rightarrow \dfrac{\beta}{g} = \dfrac{1}{\mathhighlight{1+r_t}}
+            \end{aligned}
+          \end{equation*}
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+  \begin{itemize}
+    \item $k_e$ 的欧拉方程：
+          \begin{equation*}
+            \dfrac{U_{c,t}}{q_t} = \beta U_{c,t+1} \left[(1-\tau_k) R_e(\lambda) + \dfrac{(1-\delta_e)}{q_{t+1}} \right]
+          \end{equation*}
+          \begin{itemize}
+            \item 消费的边际效用：$U_{c,t} \equiv \dfrac{\partial U(c_t, l_t)}{\partial c_t} = \dfrac{\theta}{c_t}$
+            \item t+1 期投资回报率：$R_e(\lambda) \equiv R_{e,t+1} = \dfrac{\partial y_{t+1}}{\partial k_{e,t+1}} = \alpha_e \dfrac{y_{t+1}}{k_{e,t+1}}$
+            \item 平衡增长：$q_{t+1} = \gamma_q q = \gamma_q^{t+1}$，$y_{t+1} = g y_t = g^{t+1} \hat{y}$，$k_{e,t+1} = g_e k_{e,t} = (\gamma_q g)^{t+1} \hat{k_e}$。
+          \end{itemize}
+
+  \end{itemize}
+
+  \listaftertext
+  代入欧拉方程求解，可知：
+
+  \begin{equation*}
+    \dfrac{\hcancel{\theta} }{\hcancel{c_{t}} \gamma_q^t } = \beta \dfrac{\hcancel{\theta}}{\hcancel{c_{t+1}} \cdot g } \left[(1-\tau_k) \alpha_e \dfrac{\hcancel{g^{t+1}} \hat{y}}{\hcancel{g^{t+1}} \gamma_q^{t+1} \hat{k_e}} + \dfrac{(1-\delta_e)}{\gamma_q^{t+1} } \right]
+  \end{equation*}
+\end{frame}
+
+
+\begin{frame}
+  \begin{block}{设备投资技术进步}
+    变形后可以得到含 $\alpha_e, \hat y, \hat{k_e}$ 的表达式：
+
+    \begin{equation}\label{eq:gamma_q}
+      \gamma_q = \dfrac{\beta}{g}\left[(1-\tau_k) \alpha_e \dfrac{\hat y}{\hat k_e} + (1-\delta_e) \right]
+    \end{equation}
+  \end{block}
+
+  \begin{block}{结构投资技术进步}
+    同理，由 $k_e$ 的欧拉方程可得到含 $\alpha_s, \hat y, \hat{k_s}$ 的表达式：
+
+    \begin{equation}
+      1 = \dfrac{\beta}{g}\left[(1-\tau_k) \alpha_s \dfrac{\hat y}{\hat k_s} + (1-\delta_{s}) \right]
+    \end{equation}
+  \end{block}
+
+\end{frame}
+
+\begin{frame}
+  \begin{block}{期初设备投资占比}
+    $k_e$ 累计方程，且在平衡增长路径上，因此有：
+    \begin{equation*}
+      \begin{aligned}
+        k_{e,t+1}                 & = (1-\delta_e) k_{e,t} + q_t i_{e,t}                         \\
+        (g\gamma_q)^{t+1}\hat k_e & = (1-\delta_e)(g\gamma_q)^t\hat k_e + (g\gamma_q)^t \hat i_e
+      \end{aligned}
+    \end{equation*}
+
+    化简可知：
+    \begin{equation}
+      \dfrac{\hat i_e}{\hat y} = \frac{\hat k_e}{\hat y} \left[g\gamma_q-(1-\delta_e)\right]
+    \end{equation}
+  \end{block}
+
+  \begin{block}{期初结构投资占比}
+    同理，根据 $k_s$ 累计方程可知：
+
+    \begin{equation}
+      \dfrac{\hat i_s}{\hat y} = \frac{\hat k_s}{\hat y} \left[g-(1-\delta_s)\right]
+    \end{equation}
+  \end{block}
+
+\end{frame}
+
+
+\begin{frame}
+  \begin{block}{现实数据}
+    \begin{itemize}
+      \item 设备投资占 GNP 比重
+            \begin{equation}
+              \dfrac{\hat{i}_e}{\hat{y}} = 0.073
+            \end{equation}
+      \item 结构投资占 GNP 比重
+            \begin{equation}
+              \dfrac{\hat{i}_s}{\hat{y}} = 0.041
+            \end{equation}
+    \end{itemize}
+
+  \end{block}
+  \begin{block}{资源限制}
+    \begin{equation} \label{eq:resource}
+      \dfrac{\hat{c}}{\hat{y}} + \dfrac{\hat{i}_e}{\hat{y}} + \dfrac{\hat{i}_s}{\hat{y}} = 1
+    \end{equation}
+  \end{block}
+
+\end{frame}
+
+\begin{frame}
+  \begin{block}{参数求解}
+
+    \begin{center}
+      待估参数（9+7/17-1）：$\boxed{
+          \mathhighlight{
+            \delta_e, \delta_s, \tau_l, \gamma_q, \alpha_e, \alpha_s,
+            \gamma_z, g, \beta, \theta
+          }
+          \qquad
+          \mathhighlight{
+            \tau_k,
+            \dfrac{\hat{i}_e}{\hat{y}},
+            \dfrac{\hat{i}_s}{\hat{y}},
+            \dfrac{\hat{k}_e}{\hat{y}},
+            \dfrac{\hat{k}_s}{\hat{y}},
+            \dfrac{\hat{c}}{\hat{y}}
+          },
+          \hcancel{\hat{y}}
+        }$
+    \end{center}
+    \begin{itemize}
+      \item 将期初值，更换为期初产出占比，减少一个待估参数
+      \item 公式 \eqref{eq:gamma_q} - \eqref{eq:resource}，共计 7 个方程，估计剩余的 7 个未知数。
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\section{模型结果}
+
+
+\begin{frame}{Figure 3：两种技术进步}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.55\linewidth}
+      \paperfig{0.98}{fig3_technological_change.jpg}{Figure 3: Technological Change}
+    \end{column}
+    \begin{column}{0.41\linewidth}
+      \begin{itemize}
+        \item $q$ 增长很快：平均约 3.21\%。
+        \item $z$ 增长较慢：平均约 0.39\%。
+        \item 1970 年代后，剩余中性生产率下降更明显。
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Figure 4：不同生产率测度}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.55\linewidth}
+      \paperfig{0.98}{fig4_productivity_measures.jpg}{Figure 4: Productivity Measures}
+    \end{column}
+    \begin{column}{0.41\linewidth}
+      \begin{itemize}
+        \item 劳均产出增长看起来仍然较强。
+        \item 标准 Solow residual 已经显示 slowdown。
+        \item 纳入设备专用技术后，中性生产率 slowdown 更突出。
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Figure 5：设备资本存量的测量差异}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.55\linewidth}
+      \paperfig{0.98}{fig5_equipment_stock.jpg}{Figure 5: Equipment Stock}
+    \end{column}
+    \begin{column}{0.41\linewidth}
+      \begin{itemize}
+        \item BEA 设备资本存量没有完全反映设备质量改进。
+        \item 论文构造的 $k_e$ 将 $q$ 纳入资本积累。
+        \item 资本投入增长越充分，剩余 TFP 增长越小。
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{核心定量结果}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.32\linewidth}
+      \datapill{实际增长}{产出每小时增长约 1.24\%}
+    \end{column}
+    \begin{column}{0.32\linewidth}
+      \datapill{只有 $q$}{增长约 0.77\%}
+    \end{column}
+    \begin{column}{0.32\linewidth}
+      \datapill{只有 $z$}{增长约 0.56\%}
+    \end{column}
+  \end{columns}
+  \vspace{1em}
+  \begin{alertblock}{结论}
+    investment-specific technological change 解释约 58\% 的产出每小时增长，论文中常概括为 approximately 60\%。
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{结果的经济含义}
+  \begin{itemize}
+    \item 美国战后增长中，很大一部分来自更好、更便宜的设备。
+    \item 传统 TFP 可能高估了 neutral productivity 的作用。
+    \item 一旦把设备质量进步计入资本，1970 年代后的 productivity slowdown 更严重。
+  \end{itemize}
+  \keymessage{讲解重点}{这不是“多一个冲击”的故事，而是增长核算口径被资本品质量改变了。}
+\end{frame}
+
+\section{增长核算争论与当前启示}
+
+\begin{frame}{为什么要比较增长核算框架？}
+  \begin{itemize}
+    \item 争论核心：是否应该因为设备质量提高而把总产出向上调整？
+    \item 如果处理错，investment-specific change 会被误计为 neutral TFP。
+    \item 论文比较 Solow 式框架与 Domar-Jorgenson 式框架。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Solow 式框架}
+  \begin{equation}
+    \begin{aligned}
+      c+i_e & =zF(k_e,l),             \\
+      k_e'  & =(1-\delta_e)k_e+q i_e.
+    \end{aligned}
+  \end{equation}
+  \begin{itemize}
+    \item $q$ 不进入资源约束，而进入资本积累方程。
+    \item 投资专用技术进步会改变资本形成，从而推动增长。
+    \item 这是本文定量分析采用的核心测量逻辑。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Domar-Jorgenson 框架}
+  \begin{equation}
+    c+q i_e=zF(k_e,l).
+  \end{equation}
+  \begin{itemize}
+    \item 令 $x=q i_e$，资源约束变成 $c+x=zF(k_e,l)$。
+    \item 设备积累也可写为 $k_e'=(1-\delta_e)k_e+x$。
+    \item 一般均衡中，$q$ 不再独立成为增长引擎。
+  \end{itemize}
+  \keymessage{测量教训}{把质量调整放在哪里，会改变我们对技术进步来源的解释。}
+\end{frame}
+
+\begin{frame}{Figure 6：消费品单位 vs 投资品单位}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.52\linewidth}
+      \paperfig{0.98}{fig6_measuring_neutral_tech_change.jpg}{Figure 6: Measuring Neutral Technological Change}
+    \end{column}
+    \begin{column}{0.44\linewidth}
+      \begin{itemize}
+        \item 中性技术进步使边界平行外移。
+        \item 投资专用技术进步使边界旋转。
+        \item 用投资品单位衡量产出会夸大 neutral technological change。
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{这篇 1997 年文章对今天研究的启示}
+  \begin{itemize}
+    \item \focus{资本异质性}：不能把所有资本简单聚合为一个 $K$，不同资本品承载不同技术进步。
+    \item \focus{测量优先}：价格指数、质量调整和 deflator 选择会改变增长核算结论。
+    \item \focus{AI 与数字资本}：如果 AI、软件、数据中心算力类似 embodied technology，价格和质量测度将再次成为核心。
+    \item \focus{生产率放缓}：观察到的 TFP slowdown 可能部分来自技术进步形式变化与测量错位。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{可以延伸到哪些当前问题？}
+  \begin{block}{一个现代化读法}
+    Greenwood et al. (1997) 提醒我们：当新资本品快速变便宜、质量快速上升时，研究重点不只是“TFP 有没有变快”，而是“技术进步 embodied 在哪里、价格是否正确测到、谁在积累这些资本”。
+  \end{block}
+  \begin{itemize}
+    \item 无形资本与软件投资如何计量？
+    \item AI capital 与传统 equipment capital 是否有类似机制？
+    \item 结构转型中，不同部门资本品价格变化如何影响总量增长？
+  \end{itemize}
+\end{frame}
+
+\section{推导附录}
+
+\begin{frame}{标准增长模型的设定}
+  \small
+
+  \begin{block}{模型设定}
+    \begin{equation*}
+      \begin{aligned}
+         & Y_t = C_t + I_t               \\
+         & K_{t+1} = (1-\delta)K_{t}+I_t
+      \end{aligned}
+    \end{equation*}
+  \end{block}
+
+  \begin{block}{模型结果}
+    投资和消费都来源于同一种最终品，因此，投资相对于消费品的价格是固定的：
+    \begin{equation}\label{eq:pi=pc}
+      p^i_t = p^{c}_t
+    \end{equation}
+  \end{block}
+\end{frame}
+
+\begin{frame}{标准增长模型的设定}
+
+  \begin{block}{模型设定}
+    在平衡增长路径上，设备资本和产出以同一速度 $g$ 增长：
+    $$
+      K_{t+1}=gK_{t}= (1-\delta_e)K_{t}+I_t
+    $$
+  \end{block}
+
+  \begin{block}{模型结果}
+    代入资本积累方程，由于平衡增长路径中 $K_t/Y_t$ 是常数：
+    \begin{equation}\label{eq:ItYt}
+      \frac{I_t}{Y_t} =(g-1+\delta_e)\frac{K_{t}}{Y_t} = \text{constant}
+    \end{equation}
+  \end{block}
+
+\end{frame}
+
+\begin{frame}{引入$q$后的模型}
+
+  论文引入投资品特定技术进步：
+
+  \begin{equation*}
+    K_{t+1} = (1-\delta)K_{t} + q_t I_t
+  \end{equation*}
+
+  其中，$q_t$ 表示一单位最终品可以转化为多少有效设备：
+
+  \begin{equation}
+    p^i_t = \dfrac{p^{c}_t}{q_t}, \qquad \frac{I_t}{Y_t} = (g-1+\delta)\frac{q_t K_{t}}{Y_t}
+  \end{equation}
+
+\end{frame}
+
+
+
+
+\begin{frame}[allowframebreaks]{参考文献}
+  \nocite{greenwood1997longrun}
+  \bibliographystyle{apalike}
+  \bibliography{references}
+\end{frame}
+
+\end{document}

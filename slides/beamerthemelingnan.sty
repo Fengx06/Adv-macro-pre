@@ -1,0 +1,371 @@
+% A modern Lingnan-inspired Beamer theme for course and research presentations.
+% Usage: \usetheme{lingnan}
+\ProvidesPackage{beamerthemelingnan}[2026/05/07 Modern Lingnan Beamer theme]
+
+\mode<presentation>
+
+% Core packages
+\RequirePackage[british]{babel}
+\RequirePackage{fontspec}
+\RequirePackage{xeCJK}
+\RequirePackage{amsmath}
+\RequirePackage{cancel}
+\RequirePackage[normalem]{ulem}
+\RequirePackage{unicode-math}
+\RequirePackage{graphicx}
+\RequirePackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
+\RequirePackage{booktabs}
+\RequirePackage{array}
+\RequirePackage{longtable}
+\RequirePackage{multicol}
+\RequirePackage{multirow}
+\RequirePackage{color}
+\RequirePackage{etoolbox}
+
+\hypersetup{urlcolor=blue}
+\useoutertheme[subsection=false]{miniframes}
+\useinnertheme{circles}
+\usecolortheme{beaver}
+\usefonttheme{serif}
+
+% Colors
+\definecolor{lingnanred}{RGB}{223,0,69}
+\definecolor{lingnangrey}{RGB}{213,213,210}
+\definecolor{ModernRed}{RGB}{124,25,35}
+\definecolor{ModernGold}{RGB}{191,139,61}
+\definecolor{ModernGreen}{RGB}{62,112,92}
+\definecolor{ModernInk}{RGB}{38,38,38}
+\definecolor{ModernMist}{RGB}{247,244,239}
+\definecolor{ModernSoftRed}{RGB}{250,238,238}
+\definecolor{ModernSoftGreen}{RGB}{238,247,243}
+\definecolor{NavBlueGrey}{RGB}{107,126,134}
+\definecolor{NavDotGrey}{RGB}{132,139,141}
+
+% Backward-compatible aliases used by older slides based on this template.
+\colorlet{ClanRed}{ModernRed}
+\colorlet{ClanGold}{ModernGold}
+\colorlet{ClanGreen}{ModernGreen}
+\colorlet{ClanInk}{ModernInk}
+\colorlet{ClanMist}{ModernMist}
+\colorlet{ClanSoftRed}{ModernSoftRed}
+\colorlet{ClanSoftGreen}{ModernSoftGreen}
+
+\setbeamercolor{section in head/foot}{bg=ModernSoftRed!55!white,fg=ModernRed}
+\setbeamercolor{section in head/foot shaded}{bg=ModernSoftRed!55!white,fg=NavBlueGrey}
+\setbeamercolor{author in head/foot}{parent=palette tertiary}
+\setbeamercolor{title in head/foot}{bg=lingnangrey!50!white,fg=black}
+\setbeamercolor{date in head/foot}{bg=lingnangrey!50!white,fg=black}
+\setbeamercolor{page number in head/foot}{bg=lingnangrey!50!white,fg=black}
+\setbeamercolor{logo in foot}{bg=lingnangrey!35!white}
+\setbeamercolor{frametitle}{fg=ModernInk,bg=white}
+\setbeamercolor{title}{fg=ModernRed}
+\setbeamercolor{subtitle}{fg=ModernRed}
+\setbeamercolor{normal text}{fg=ModernInk,bg=white}
+\setbeamercolor{block title}{fg=white,bg=ModernRed}
+\setbeamercolor{block body}{fg=ModernInk,bg=ModernMist}
+\setbeamercolor{itemize item}{fg=ModernRed}
+\setbeamercolor{itemize subitem}{fg=ModernRed}
+\setbeamercolor{item}{fg=ModernRed}
+\setbeamercolor{item projected}{fg=white,bg=ModernRed}
+\setbeamercolor{qed symbol}{fg=ModernRed}
+\setbeamercolor{caption name}{fg=ModernRed}
+\setbeamercolor{button}{bg=ModernRed}
+\setbeamercolor{bibliography entry author}{fg=ModernRed}
+\setbeamercolor{bibliography entry note}{fg=ModernInk}
+\setbeamercolor{h1}{bg=ModernRed}
+\setbeamercolor{h2}{bg=lingnangrey!50!white}
+\setbeamercolor{upper separation line head}{bg=ModernRed}
+\setbeamercolor{lower separation line head}{bg=ModernRed}
+\setbeamercolor{mini frame}{fg=NavDotGrey,bg=white}
+\setbeamercolor{mini frame in current subsection}{fg=ModernRed,bg=ModernRed}
+\setbeamercolor{mini frame in other subsection}{fg=NavDotGrey,bg=white}
+
+% Font setup. The deck is Chinese-first, with English terminology kept readable.
+\IfFontExistsTF{Times New Roman}{
+  \setmainfont{Times New Roman}
+}{
+  \setmainfont{TeX Gyre Termes}
+}
+
+\setsansfont{TeX Gyre Heros}
+
+\IfFontExistsTF{Georgia}{
+  \newfontfamily\lingnanheadinglatinfont{Georgia}
+}{
+  \IfFontExistsTF{Cambria}{
+    \newfontfamily\lingnanheadinglatinfont{Cambria}
+  }{
+    \newfontfamily\lingnanheadinglatinfont{TeX Gyre Heros}
+  }
+}
+\DeclareRobustCommand{\latinheading}[1]{\texorpdfstring{{\lingnanheadinglatinfont #1}}{#1}}
+
+\IfFontExistsTF{Cascadia Code}{
+  \setmonofont{Cascadia Code}
+}{
+  \IfFontExistsTF{Consolas}{
+    \setmonofont{Consolas}
+  }{
+    \setmonofont{Courier New}
+  }
+}
+
+\IfFontExistsTF{TeX Gyre Termes Math}{
+  \setmathfont{TeX Gyre Termes Math}
+}{
+  \setmathfont{texgyretermes-math.otf}
+}
+
+\IfFontExistsTF{KaiTi}{
+  \setCJKmainfont{KaiTi}[AutoFakeBold=2.0]
+}{
+  \IfFontExistsTF{STKaiti}{
+    \setCJKmainfont{STKaiti}[AutoFakeBold=2.0]
+  }{
+    \IfFontExistsTF{STFangsong}{
+      \setCJKmainfont{STFangsong}[AutoFakeBold=2.0]
+    }{
+      \IfFontExistsTF{Microsoft YaHei}{
+        \setCJKmainfont{Microsoft YaHei}
+      }{
+        \setCJKmainfont{FandolSong-Regular.otf}
+      }
+    }
+  }
+}
+
+\IfFontExistsTF{STZhongsong}{
+  \setCJKsansfont{STZhongsong}[AutoFakeBold=2.0]
+}{
+  \IfFontExistsTF{Source Han Serif SC}{
+    \setCJKsansfont{Source Han Serif SC}[AutoFakeBold=2.0]
+  }{
+    \IfFontExistsTF{Microsoft YaHei}{
+      \setCJKsansfont{Microsoft YaHei}
+    }{
+      \IfFontExistsTF{DengXian}{
+        \setCJKsansfont{DengXian}
+      }{
+        \setCJKsansfont{FandolHei-Regular.otf}
+      }
+    }
+  }
+}
+
+\IfFontExistsTF{Microsoft YaHei}{
+  \setCJKmonofont{Microsoft YaHei}
+}{
+  \IfFontExistsTF{DengXian}{
+    \setCJKmonofont{DengXian}
+  }{
+    \setCJKmonofont{FandolHei-Regular.otf}
+  }
+}
+
+\IfFontExistsTF{Microsoft YaHei}{
+  \setCJKfallbackfamilyfont{\CJKsfdefault}{Microsoft YaHei}
+}{}
+\xeCJKsetup{AutoFallBack=true}
+
+% Basic Beamer style
+\setbeamerfont{title}{family=\lingnanheadinglatinfont,series=\bfseries,size=\LARGE}
+\setbeamerfont{frametitle}{family=\sffamily,series=\bfseries,size=\Large}
+\setbeamerfont{section title}{family=\sffamily}
+\setbeamerfont{section in head/foot}{family=\lingnanheadinglatinfont,series=\bfseries,size=\scriptsize}
+\setbeamerfont{date}{size=\small}
+\setcounter{tocdepth}{1}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{section in toc}[square]
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{blocks}[rounded]
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+\setbeamertemplate{itemize item}{\raise0.18ex\hbox{\scriptsize$\blacktriangleright$}}
+\setbeamertemplate{itemize subitem}{\raise0.08ex\hbox{\large$\bullet$}}
+\setbeamercovered{dynamic}
+\setlength{\leftmargini}{1.2em}
+\newcommand{\lingnannavitem}[3]{%
+  \ifnum\thesection=#1
+    \hyperlink{Navigation#3}{%
+      \begin{beamercolorbox}[wd=0.2\paperwidth,ht=3.2ex,dp=1.05ex,center]{section in head/foot}
+        \usebeamerfont{section in head/foot}#2
+      \end{beamercolorbox}%
+    }%
+  \else
+    \hyperlink{Navigation#3}{%
+      \begin{beamercolorbox}[wd=0.2\paperwidth,ht=3.2ex,dp=1.05ex,center]{section in head/foot shaded}
+        \usebeamerfont{section in head/foot}#2
+      \end{beamercolorbox}%
+    }%
+  \fi
+}
+
+\newcommand{\lingnansectionnav}{%
+  \hbox to \paperwidth{%
+    \lingnannavitem{1}{Introduction}{3}%
+    \lingnannavitem{2}{Literature Gap and Question}{4}%
+    \lingnannavitem{3}{Method}{5}%
+    \lingnannavitem{4}{Results and Discussion}{6}%
+    \lingnannavitem{5}{Conclusion}{8}%
+  }%
+}
+
+% Title-page metadata helpers
+\providecommand{\inserttitlepageinfo}{}
+\newcommand{\titlepageinfo}[1]{\renewcommand{\inserttitlepageinfo}{#1}}
+\providecommand{\inserttitlepagefooter}{}
+\newcommand{\titlepagefooter}[1]{\renewcommand{\inserttitlepagefooter}{#1}}
+
+% Convenience commands for short presentation slides.
+\newcommand{\slidetag}[1]{%
+  {\sffamily\bfseries\footnotesize\color{ModernRed}#1}\vspace{0.25em}}
+
+\newcommand{\keymessage}[2]{%
+  \par\vskip\medskipamount%
+  \begin{beamercolorbox}[wd=\textwidth,sep=0.20cm,rounded=true]{block body}
+    {\sffamily\bfseries\color{ModernRed}#1}\quad #2
+  \end{beamercolorbox}}
+
+\newcommand{\focus}[1]{{\sffamily\bfseries\color{ModernRed}#1}}
+\newcommand{\mathhighlight}[1]{\textcolor{ModernRed}{#1}}
+\newcommand{\hcancel}[1]{\text{\sout{\ensuremath{#1}}}}
+
+\newcommand{\datapill}[2]{%
+  \begin{beamercolorbox}[wd=\linewidth,sep=0.16cm,rounded=true]{block body}
+    {\sffamily\bfseries\color{ModernRed}#1}\par
+    {\small #2}
+  \end{beamercolorbox}}
+
+% Header and footer
+\setbeamertemplate{headline}{%
+  \ifnum\insertframenumber>0
+    \begin{beamercolorbox}{section in head/foot}
+      \vskip2.4ex
+      \vskip-\baselineskip
+      \hspace*{0.2cm}\insertnavigation{\dimexpr\paperwidth-0.4cm\relax}
+      \vskip1.0ex
+    \end{beamercolorbox}%
+  \fi
+}
+
+\setbeamertemplate{footline}
+{
+  \leavevmode
+  \vbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=0.62cm,dp=0.06cm,left]{logo in foot}
+      \hspace*{0.55cm}\raisebox{0.08cm}{\includegraphics[height=0.46cm]{image/logo.png}}
+    \end{beamercolorbox}%
+    \hbox{%
+      \begin{beamercolorbox}[wd=.22\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}
+        \usebeamerfont{author in head/foot}\insertshortauthor
+      \end{beamercolorbox}%
+      \begin{beamercolorbox}[wd=.46\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}
+        \usebeamerfont{title in head/foot}\insertshorttitle
+      \end{beamercolorbox}%
+      \begin{beamercolorbox}[wd=.20\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}
+        \usebeamerfont{date in head/foot}\insertshortdate
+      \end{beamercolorbox}%
+      \begin{beamercolorbox}[wd=.12\paperwidth,ht=2.25ex,dp=1ex,right]{page number in head/foot}
+        \usebeamerfont{page number in head/foot}\insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+      \end{beamercolorbox}%
+    }%
+  }%
+}
+
+% Title page
+\setbeamertemplate{title page}{
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[lingnangrey!30!white]
+      ([yshift=-1.15cm]current page.north west)
+      rectangle
+      ([yshift=-4.05cm]current page.north east);
+  \end{tikzpicture}
+
+  \vspace*{0.85cm}
+  \begin{flushleft}
+    {{\lingnanheadinglatinfont\bfseries\LARGE\usebeamercolor[fg]{title}\inserttitle}\par}
+    \vskip0.45em
+    \ifx\insertsubtitle\@empty
+    \else
+      {{\lingnanheadinglatinfont\usebeamercolor[fg]{subtitle}\insertsubtitle}\par}
+    \fi
+    \vskip2.9cm
+    {\usebeamerfont{author}\insertauthor\par}
+    \vskip0.55em
+    {\usebeamerfont{institute}\insertinstitute\par}
+  \end{flushleft}
+
+  \vfill
+}
+
+% Section divider page
+\setbeamertemplate{section page}{
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[white] (current page.south west) rectangle (current page.north east);
+    \fill[lingnangrey!20!white]
+      ([xshift=0.0cm,yshift=-0.70cm]current page.north west)
+      rectangle
+      ([xshift=\paperwidth,yshift=-0.92cm]current page.north west);
+    \fill[ModernRed]
+      ([xshift=0.0cm,yshift=-0.70cm]current page.north west)
+      rectangle
+      ([xshift=0.30\paperwidth,yshift=-0.92cm]current page.north west);
+    \fill[ModernRed]
+      ([xshift=1.10cm,yshift=1.05cm]current page.south west)
+      rectangle
+      ([xshift=11.80cm,yshift=1.12cm]current page.south west);
+    \node[anchor=west,inner sep=0pt]
+      at ([xshift=1.10cm,yshift=-1.85cm]current page.north west)
+      {\color{lingnangrey!85!black}\sffamily\bfseries\fontsize{42}{42}\selectfont 0\thesection};
+    \node[anchor=west,inner sep=0pt]
+      at ([xshift=1.18cm,yshift=-2.58cm]current page.north west)
+      {\color{ModernRed}\sffamily\bfseries\large PART \thesection};
+    \node[anchor=west,text width=0.78\paperwidth,align=left,inner sep=0pt]
+      at ([xshift=1.10cm,yshift=-4.00cm]current page.north west)
+      {\color{black}\sffamily\bfseries\fontsize{26}{31}\selectfont\insertsectionhead};
+    \node[anchor=west,text width=0.68\paperwidth,align=left,inner sep=0pt]
+      at ([xshift=1.10cm,yshift=1.52cm]current page.south west)
+      {\color{black!55}\sffamily\small \insertshortauthor};
+    \node[anchor=west,inner sep=0pt]
+      at ([xshift=1.10cm,yshift=0.55cm]current page.south west)
+      {\color{black!70}\sffamily\footnotesize \insertshorttitle};
+    \node[anchor=east,inner sep=0pt]
+      at ([xshift=-1.05cm,yshift=0.55cm]current page.south east)
+      {\color{ModernRed}\sffamily\footnotesize \insertshortdate};
+  \end{tikzpicture}
+}
+
+% Keep sections available for the table of contents and PDF navigation,
+% without adding automatic divider slides to short classroom decks.
+
+% Compact body spacing for classroom slides.
+% This only changes list environments and displayed equations.
+\newlength{\lingnanlistafterskip}
+\setlength{\lingnanlistafterskip}{0.55em}
+\newcommand{\listaftertext}{\vspace{\lingnanlistafterskip}}
+
+\AtBeginEnvironment{itemize}{%
+  \setlength{\itemsep}{2pt}%
+  \setlength{\parsep}{0pt}%
+  \setlength{\parskip}{0pt}%
+  \setlength{\topsep}{2pt}%
+  \setlength{\partopsep}{0pt}%
+}
+
+\AtBeginEnvironment{enumerate}{%
+  \setlength{\itemsep}{2pt}%
+  \setlength{\parsep}{0pt}%
+  \setlength{\parskip}{0pt}%
+  \setlength{\topsep}{2pt}%
+  \setlength{\partopsep}{0pt}%
+}
+
+\g@addto@macro\normalsize{%
+  \setlength{\abovedisplayskip}{4pt}%
+  \setlength{\belowdisplayskip}{4pt}%
+  \setlength{\abovedisplayshortskip}{2pt}%
+  \setlength{\belowdisplayshortskip}{3pt}%
+}
+
+\mode<all>
