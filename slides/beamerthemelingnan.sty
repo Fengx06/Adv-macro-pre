@@ -221,11 +221,11 @@
 \xeCJKsetup{AutoFallBack=true}
 
 % Basic Beamer style
-\setbeamerfont{title}{family=\lingnanheadinglatinfont,series=\bfseries,size=\LARGE}
-\setbeamerfont{frametitle}{family=\sffamily,series=\bfseries,size=\Large}
+\setbeamerfont{title}{family=\lingnanheadinglatinfont,series=\bfseries,size=\Large}
+\setbeamerfont{frametitle}{family=\sffamily,series=\bfseries,size=\large}
 \setbeamerfont{section title}{family=\sffamily}
-\setbeamerfont{section in head/foot}{family=\lingnanheadinglatinfont,series=\bfseries,size=\scriptsize}
-\setbeamerfont{date}{size=\small}
+\setbeamerfont{section in head/foot}{family=\lingnanheadinglatinfont,series=\bfseries,size=\tiny}
+\setbeamerfont{date}{size=\footnotesize}
 \setcounter{tocdepth}{1}
 \setbeamertemplate{caption}[numbered]
 \setbeamertemplate{navigation symbols}{}
@@ -233,8 +233,8 @@
 \setbeamertemplate{enumerate items}[default]
 \setbeamertemplate{blocks}[rounded]
 \setbeamertemplate{bibliography item}{\insertbiblabel}
-\setbeamertemplate{itemize item}{\raise0.18ex\hbox{\scriptsize$\blacktriangleright$}}
-\setbeamertemplate{itemize subitem}{\raise0.08ex\hbox{\large$\bullet$}}
+\setbeamertemplate{itemize item}{\raise0.18ex\hbox{\tiny$\blacktriangleright$}}
+\setbeamertemplate{itemize subitem}{\raise0.08ex\hbox{\normalsize$\bullet$}}
 \setbeamercovered{dynamic}
 \setlength{\leftmargini}{1.2em}
 \newcommand{\lingnannavitem}[3]{%
@@ -271,7 +271,7 @@
 
 % Convenience commands for short presentation slides.
 \newcommand{\slidetag}[1]{%
-  {\sffamily\bfseries\footnotesize\color{ModernRed}#1}\vspace{0.25em}}
+  {\sffamily\bfseries\scriptsize\color{ModernRed}#1}\vspace{0.25em}}
 
 \newcommand{\keymessage}[2]{%
   \par\vskip\medskipamount%
@@ -286,7 +286,7 @@
 \newcommand{\datapill}[2]{%
   \begin{beamercolorbox}[wd=\linewidth,sep=0.16cm,rounded=true]{block body}
     {\sffamily\bfseries\color{ModernRed}#1}\par
-    {\small #2}
+    {\footnotesize #2}
   \end{beamercolorbox}}
 
 % Header and footer
@@ -336,7 +336,7 @@
 
   \vspace*{0.85cm}
   \begin{flushleft}
-    {{\lingnanheadinglatinfont\bfseries\LARGE\usebeamercolor[fg]{title}\inserttitle}\par}
+    {{\lingnanheadinglatinfont\bfseries\Large\usebeamercolor[fg]{title}\inserttitle}\par}
     \vskip0.45em
     \ifx\insertsubtitle\@empty
     \else
@@ -369,22 +369,22 @@
       ([xshift=11.80cm,yshift=1.12cm]current page.south west);
     \node[anchor=west,inner sep=0pt]
       at ([xshift=1.10cm,yshift=-1.85cm]current page.north west)
-      {\color{lingnangrey!85!black}\sffamily\bfseries\fontsize{42}{42}\selectfont 0\thesection};
+      {\color{lingnangrey!85!black}\sffamily\bfseries\fontsize{36}{36}\selectfont 0\thesection};
     \node[anchor=west,inner sep=0pt]
       at ([xshift=1.18cm,yshift=-2.58cm]current page.north west)
-      {\color{ModernRed}\sffamily\bfseries\large PART \thesection};
+      {\color{ModernRed}\sffamily\bfseries\normalsize PART \thesection};
     \node[anchor=west,text width=0.78\paperwidth,align=left,inner sep=0pt]
       at ([xshift=1.10cm,yshift=-4.00cm]current page.north west)
-      {\color{black}\sffamily\bfseries\fontsize{26}{31}\selectfont\insertsectionhead};
+      {\color{black}\sffamily\bfseries\fontsize{22}{26}\selectfont\insertsectionhead};
     \node[anchor=west,text width=0.68\paperwidth,align=left,inner sep=0pt]
       at ([xshift=1.10cm,yshift=1.52cm]current page.south west)
-      {\color{black!55}\sffamily\small \insertshortauthor};
+      {\color{black!55}\sffamily\footnotesize \insertshortauthor};
     \node[anchor=west,inner sep=0pt]
       at ([xshift=1.10cm,yshift=0.55cm]current page.south west)
-      {\color{black!70}\sffamily\footnotesize \insertshorttitle};
+      {\color{black!70}\sffamily\scriptsize \insertshorttitle};
     \node[anchor=east,inner sep=0pt]
       at ([xshift=-1.05cm,yshift=0.55cm]current page.south east)
-      {\color{ModernRed}\sffamily\footnotesize \insertshortdate};
+      {\color{ModernRed}\sffamily\scriptsize \insertshortdate};
   \end{tikzpicture}
 }
 
