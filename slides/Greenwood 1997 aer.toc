@@ -1,9 +1,0 @@
-\babel@toc {british}{}\relax 
-\beamer@sectionintoc {1}{\latinheading {动机和背景}}{2}{0}{1}
-\beamer@sectionintoc {2}{\latinheading {模型设定}}{5}{0}{2}
-\beamer@sectionintoc {3}{模型求解与参数估计}{10}{0}{3}
-\beamer@subsectionintoc {3}{1}{竞争均衡与平衡增路径}{10}{0}{3}
-\beamer@subsectionintoc {3}{2}{参数估计}{16}{0}{3}
-\beamer@sectionintoc {4}{模型结果}{24}{0}{4}
-\beamer@sectionintoc {5}{增长核算争论与当前启示}{29}{0}{5}
-\beamer@sectionintoc {6}{推导附录}{35}{0}{6}
