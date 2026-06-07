@@ -13,3 +13,5 @@ slides/Greenwood 1997 aer.toc
 slides/missfont.log
 
 .gitignore
+slides/Greenwood 1997 aer.fls
+slides/Greenwood 1997 aer.fdb_latexmk
