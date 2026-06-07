@@ -50,11 +50,13 @@
       \begin{enumerate}
         \item 二战后的黄金增长（1945--1973）
               \begin{itemize}
-                \item TFP 年均增速达 2\%，贡献超过 50\%。
+                \item TFP 年均增速达 2\%
+                \item TFP 贡献超过 50\%。
               \end{itemize}
         \item 此后，增速全面下滑（1973-1995）
               \begin{itemize}
-                \item 1965--1973 为 1.5\%，1973--1995 为 0.6\%。
+                \item 1965--1973 为 1.5\%
+                \item 1973--1995 为 0.6\%。
               \end{itemize}
         \item 同时，技术蓬勃发展
               \begin{itemize}
@@ -550,60 +552,115 @@
 \section{模型结果}
 
 
-\begin{frame}{Figure 3：两种技术进步}
+\begin{frame}{Figure 3：解释索罗悖论}
+  % \scriptsize
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.55\linewidth}
-      \paperfig{0.98}{fig3_technological_change.jpg}{Technological Change}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.8\linewidth]{fig3_technological_change.jpg}
+        \vspace{-1em}
+        \caption{Technological Change}
+      \end{figure}
       \footnotesize
       \vspace{-1em}
       注：左轴：资本偏向型技术（$q$），右轴：中性技术（$z$）
     \end{column}
     \begin{column}{0.41\linewidth}
 
-      \begin{enumerate}
-        \item 图像解读
-              \begin{itemize}
-                \item $q$ 增长很快（3.21\%）。
-                \item $z$ 增长较慢（0.39\%）。
-                      % \item 1970 后中性生产率下降。
-              \end{itemize}
-        \item 经济解读
-              \begin{itemize}
-                \item 二战后（1945），美国主要的技术进步来自于投资品技术进步。
-                \item
-              \end{itemize}
-      \end{enumerate}
+      \begin{block}{图像解读}
+        \begin{itemize}
+          \item $q$ 增长很快（3.21\%）
+          \item $z$ 增长较慢（0.39\%）
+        \end{itemize}
+      \end{block}
 
+      \begin{block}{经济现实}
+        \begin{enumerate}
+          \item 中性技术增长缓慢，甚至下降
+                \begin{itemize}
+                  \item 石油危机，导致能源价格上升
+                  \item 经济滞涨，资源配置效率降低
+                \end{itemize}
+          \item 投资品技术进步明显
+                \begin{itemize}
+                  \item 计算机、通讯技术蓬勃发展
+                  \item 数控机床，物流运输不断改进
+                \end{itemize}
+        \end{enumerate}
+      \end{block}
     \end{column}
   \end{columns}
 \end{frame}
 
-\begin{frame}{Figure 4：不同生产率测度}
+\begin{frame}{Figure 4：重新理解经济增长}
+  \small
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.55\linewidth}
-      \paperfig{0.98}{fig4_productivity_measures.jpg}{Figure 4: Productivity Measures}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.9\linewidth]{image/fig4_productivity_measures.jpg}
+        \vspace{-1em}
+        \caption{Productivity Measures}
+      \end{figure}
+      \footnotesize
+      % \vspace{-1em}
+      % 注：$y=z_p l = z_1 k^\alpha l^(1-\alpha) = z_2 k_e^{\alpha_e} k_s^{\alpha_s}l^{1-\alpha_e-\alpha_s}$
     \end{column}
     \begin{column}{0.41\linewidth}
-      \begin{itemize}
-        \item 劳均产出增长看起来仍然较强。
-        \item 标准 Solow residual 已经显示 slowdown。
-        \item 纳入设备专用技术后，中性生产率 slowdown 更突出。
-      \end{itemize}
+      \begin{block}{图像解读}
+        \begin{itemize}
+          \item 水平值本质上不可比
+          \item 增长率不断下降：$1.24\% \to 0.71\% \to 0.68\% \to 0.39\%$
+        \end{itemize}
+      \end{block}
+
+      \begin{block}{经济现实}
+        \begin{itemize}
+          \item 资本积累，在一定程度上解释了增长 \\（$1.24\% \to 0.70\%$）
+          \item 资本的分类，对理解增长帮助不明显 \\ （$0.71\% \to 0.68\%$）
+          \item 设备资本进步，也是的影响重要因素 \\ （$0.68\% \to 0.39\%$）
+        \end{itemize}
+      \end{block}
     \end{column}
   \end{columns}
 \end{frame}
 
-\begin{frame}{Figure 5：设备资本存量的测量差异}
+\begin{frame}{Figure 5：设备资本存量的差异}
+  \vspace{-1em}
+  \begin{center}
+    \begin{equation*}
+      k_{e,t+1}^{M}  = (1-\delta_e) k_{e,t}^{M} + \dfrac{i_e}{p^{c}_t} \cdot \dfrac{p^{c}_t}{p^{G,e}_t} \qquad
+      k_{e,t+1}^{B}  = (1-\delta_e) k_{e,t}^{B} + \dfrac{i_e}{p^{B,e}_t}
+    \end{equation*}
+  \end{center}
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.55\linewidth}
-      \paperfig{0.98}{fig5_equipment_stock.jpg}{Figure 5: Equipment Stock}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.8\linewidth]{fig5_equipment_stock.jpg}
+        \vspace{-1em}
+        \caption{Equipment Stock}
+      \end{figure}
+      \footnotesize
+      \vspace{-1em}
+      注：虚线：BEA 测算的设备资本，实线：文章测算的设备资本
     \end{column}
     \begin{column}{0.41\linewidth}
-      \begin{itemize}
-        \item BEA 设备资本存量没有完全反映设备质量改进。
-        \item 论文构造的 $k_e$ 将 $q$ 纳入资本积累。
-        \item 资本投入增长越充分，剩余 TFP 增长越小。
-      \end{itemize}
+
+      \begin{block}{图像解读}
+        \begin{itemize}
+          \item BEA 测算的设备资本存量偏高
+          \item Model 设备资本增速高于 BEA
+        \end{itemize}
+      \end{block}
+
+      \begin{block}{经济现实}
+        \begin{itemize}
+          \item BEA 官方设备价格指数不够细
+          \item 未被统计到的设备技术进步（$q$）
+        \end{itemize}
+      \end{block}
     \end{column}
   \end{columns}
 \end{frame}
