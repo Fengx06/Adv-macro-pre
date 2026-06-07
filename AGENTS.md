@@ -89,6 +89,15 @@
 
 注意文件编码。如果在终端中看到中文乱码，不要贸然大范围修改 `.tex` 文件，应先确认编码。新建文件优先使用 UTF-8。
 
+### Codex / Windows 沙箱注意事项
+本项目路径包含中文目录，并位于 Nutstore 同步目录下。在 Windows managed sandbox 下，Codex 偶尔会在执行普通 PowerShell 命令前失败，报错类似：
+
+```text
+windows sandbox: spawn setup refresh
+```
+
+这属于 Codex 工具层的沙箱初始化问题，不是 LaTeX、Beamer 或源码语法错误。遇到该错误时，应按权限规则使用 `sandbox_permissions: "require_escalated"` 重新运行同一条必要命令；不要因为这个错误去修改 `.tex` 文件内容。若频繁出现，可在新的 Codex 会话中切换到更宽松的 filesystem sandbox，或将项目复制到不含中文路径的本地目录后再运行。
+
 除非用户明确要求，不要修改以下 LaTeX 生成文件：
 
 - `.aux`
