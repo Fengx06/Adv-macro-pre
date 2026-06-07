@@ -80,7 +80,7 @@
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.48\linewidth}
       \begin{itemize}
-        \item 设备价格越来也低，投资数量却越来越高
+        \item 设备价格越来越低，投资数量却越来越高
       \end{itemize}
       \paperfig{0.98}{fig1_investment_in_equipment.jpg}{Investment in Equipment}
     \end{column}
@@ -113,23 +113,64 @@
 \end{frame}
 
 \begin{frame}{如何解释？}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.31\linewidth}
+      \centering
+      \includegraphics[width=\linewidth,height=0.58\textheight,keepaspectratio]{\detokenize{image/管制放松.png}}
+      \vspace{0.3em}
 
+      \textbf{管制放松：国内竞争加剧}
+    \end{column}
+
+    \begin{column}{0.31\linewidth}
+      \centering
+      \includegraphics[width=\linewidth,height=0.58\textheight,keepaspectratio]{\detokenize{image/贸易自由.png}}
+      \vspace{0.3em}
+
+      \textbf{贸易自由：国外厂商进入}
+    \end{column}
+
+    \begin{column}{0.31\linewidth}
+      \centering
+      \includegraphics[width=\linewidth,height=0.58\textheight,keepaspectratio]{\detokenize{image/军器民用.png}}
+      \vspace{0.3em}
+
+      \textbf{军器民用：产业技术进步}
+    \end{column}
+  \end{columns}
 \end{frame}
 
-\begin{frame}{新的解释：投资专用技术进步}
-  \textbf{投资专用技术进步}（investment-specific）技术进步体现在新设备的质量提升和价格下降上。
+\begin{frame}[t]{文中的解释：投资专用技术进步}
+  
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\linewidth}
+      \vspace{2em}
+      \begin{block}{}
+        \begin{center}
+          \large 投资偏向型的技术进步（investment-specific）
+        \end{center}
+      \end{block}
+      \vspace{0.5em}
+      \begin{enumerate}
+        \item 偏向
+        \begin{itemize}
+          \item 存在\textbf{非中性的}技术进步
+        \end{itemize}
+        \item 投资偏向
+        \begin{itemize}
+        \item 体现在\textbf{新设备的质量提升}和价格下降
+        \item 消费和服务受到的影响较小
+        \item 厂房和基础设施等资本无明显变化
+        \end{itemize}
+      \end{enumerate}
+      
+    \end{column}
 
-  % \begin{alertblock}{}
-  %   某种非对称的影响
-  % \end{alertblock}
-  % \begin{block}{论文要量化的问题}
-  %   美国战后产出每小时增长中，有多少来自 investment-specific technological change，有多少来自 neutral technological change？
-  % \end{block}
-  % \begin{itemize}
-  %   \item 识别来源：设备相对价格下降。
-  %   \item 理论工具：带有 vintage capital 直觉的一般均衡增长模型。
-  %   \item 定量对象：1954--1990 年美国长期增长经验。
-  % \end{itemize}
+    \begin{column}{0.48\linewidth}
+      \centering
+      \includegraphics[width=0.9\linewidth,keepaspectratio]{\detokenize{image/技术进步示意.png}}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \section{\latinheading{模型设定}}
@@ -627,7 +668,7 @@
 \end{frame}
 
 \begin{frame}{Figure 5：设备资本存量的差异}
-  \vspace{-1em}
+  \vspace{-2em}
   \begin{center}
     \begin{equation*}
       k_{e,t+1}^{M}  = (1-\delta_e) k_{e,t}^{M} + \dfrac{i_e}{p^{c}_t} \cdot \dfrac{p^{c}_t}{p^{G,e}_t} \qquad
@@ -657,7 +698,7 @@
 
       \begin{block}{经济现实}
         \begin{itemize}
-          \item BEA 官方设备价格指数不够细
+          \item BEA 数据对设备价格不够充分
           \item 未被统计到的设备技术进步（$q$）
         \end{itemize}
       \end{block}
@@ -713,6 +754,10 @@
     \item AI capital 与传统 equipment capital 是否有类似机制？
     \item 结构转型中，不同部门资本品价格变化如何影响总量增长？
   \end{itemize}
+
+  \begin{block}{理解结构}
+    变量的非对称性影响？
+  \end{block}
 \end{frame}
 
 
