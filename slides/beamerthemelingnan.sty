@@ -88,40 +88,44 @@
   \setmainfont{TeX Gyre Termes}
 }
 
-\IfFontExistsTF{TeX Gyre Heros}{
-  \setsansfont{TeX Gyre Heros}
+\IfFontExistsTF{Times New Roman}{
+  \setsansfont{Times New Roman}
 }{
-  \IfFontExistsTF{Helvetica}{
-    \setsansfont{Helvetica}
+  \IfFontExistsTF{TeX Gyre Termes}{
+    \setsansfont{TeX Gyre Termes}
   }{
-    \IfFontExistsTF{Arial}{
-      \setsansfont{Arial}
+    \IfFontExistsTF{TeX Gyre Heros}{
+      \setsansfont{TeX Gyre Heros}
     }{
-      \setsansfont{texgyreheros-regular.otf}[
-        BoldFont=texgyreheros-bold.otf,
-        ItalicFont=texgyreheros-italic.otf,
-        BoldItalicFont=texgyreheros-bolditalic.otf
-      ]
+      \IfFontExistsTF{Arial}{
+        \setsansfont{Arial}
+      }{
+        \setsansfont{texgyretermes-regular.otf}[
+          BoldFont=texgyretermes-bold.otf,
+          ItalicFont=texgyretermes-italic.otf,
+          BoldItalicFont=texgyretermes-bolditalic.otf
+        ]
+      }
     }
   }
 }
 
-\IfFontExistsTF{Georgia}{
-  \newfontfamily\lingnanheadinglatinfont{Georgia}
+\IfFontExistsTF{Times New Roman}{
+  \newfontfamily\lingnanheadinglatinfont{Times New Roman}
 }{
-  \IfFontExistsTF{Cambria}{
-    \newfontfamily\lingnanheadinglatinfont{Cambria}
+  \IfFontExistsTF{TeX Gyre Termes}{
+    \newfontfamily\lingnanheadinglatinfont{TeX Gyre Termes}
   }{
-    \IfFontExistsTF{TeX Gyre Heros}{
-      \newfontfamily\lingnanheadinglatinfont{TeX Gyre Heros}
+    \IfFontExistsTF{Cambria}{
+      \newfontfamily\lingnanheadinglatinfont{Cambria}
     }{
-      \IfFontExistsTF{Helvetica}{
-        \newfontfamily\lingnanheadinglatinfont{Helvetica}
+      \IfFontExistsTF{TeX Gyre Heros}{
+        \newfontfamily\lingnanheadinglatinfont{TeX Gyre Heros}
       }{
-        \newfontfamily\lingnanheadinglatinfont{texgyreheros-regular.otf}[
-          BoldFont=texgyreheros-bold.otf,
-          ItalicFont=texgyreheros-italic.otf,
-          BoldItalicFont=texgyreheros-bolditalic.otf
+        \newfontfamily\lingnanheadinglatinfont{texgyretermes-regular.otf}[
+          BoldFont=texgyretermes-bold.otf,
+          ItalicFont=texgyretermes-italic.otf,
+          BoldItalicFont=texgyretermes-bolditalic.otf
         ]
       }
     }
@@ -129,17 +133,17 @@
 }
 \DeclareRobustCommand{\latinheading}[1]{\texorpdfstring{{\lingnanheadinglatinfont #1}}{#1}}
 
-\IfFontExistsTF{Menlo}{
-  \setmonofont{Menlo}
+\IfFontExistsTF{Cascadia Code}{
+  \setmonofont{Cascadia Code}
 }{
-  \IfFontExistsTF{Monaco}{
-    \setmonofont{Monaco}
+  \IfFontExistsTF{Consolas}{
+    \setmonofont{Consolas}
   }{
-    \IfFontExistsTF{Cascadia Code}{
-      \setmonofont{Cascadia Code}
+    \IfFontExistsTF{Menlo}{
+      \setmonofont{Menlo}
     }{
-      \IfFontExistsTF{Consolas}{
-        \setmonofont{Consolas}
+      \IfFontExistsTF{Monaco}{
+        \setmonofont{Monaco}
       }{
         \setmonofont{Latin Modern Mono}
       }
@@ -293,7 +297,7 @@
 
 % Header and footer
 \setbeamertemplate{headline}{%
-  \ifnum\insertframenumber>0
+  \ifnum\insertframenumber>1
     \begin{beamercolorbox}{section in head/foot}
       \vskip2.4ex
       \vskip-\baselineskip
@@ -357,41 +361,55 @@
 \setbeamertemplate{section page}{
   \begin{tikzpicture}[remember picture,overlay]
     \fill[white] (current page.south west) rectangle (current page.north east);
-    \fill[lingnangrey!20!white]
-      ([xshift=0.0cm,yshift=-0.70cm]current page.north west)
+    \fill[ModernMist]
+      ([xshift=0.0cm,yshift=-0.90cm]current page.north west)
       rectangle
-      ([xshift=\paperwidth,yshift=-0.92cm]current page.north west);
+      ([xshift=\paperwidth,yshift=-2.55cm]current page.north west);
     \fill[ModernRed]
-      ([xshift=0.0cm,yshift=-0.70cm]current page.north west)
+      ([xshift=0.0cm,yshift=-0.90cm]current page.north west)
       rectangle
-      ([xshift=0.30\paperwidth,yshift=-0.92cm]current page.north west);
+      ([xshift=0.34\paperwidth,yshift=-1.02cm]current page.north west);
+    \fill[lingnangrey!45!white]
+      ([xshift=0.34\paperwidth,yshift=-0.90cm]current page.north west)
+      rectangle
+      ([xshift=\paperwidth,yshift=-1.02cm]current page.north west);
     \fill[ModernRed]
-      ([xshift=1.10cm,yshift=1.05cm]current page.south west)
+      ([xshift=1.05cm,yshift=1.42cm]current page.south west)
       rectangle
-      ([xshift=11.80cm,yshift=1.12cm]current page.south west);
+      ([xshift=13.15cm,yshift=1.50cm]current page.south west);
     \node[anchor=west,inner sep=0pt]
-      at ([xshift=1.10cm,yshift=-1.85cm]current page.north west)
-      {\color{lingnangrey!85!black}\sffamily\bfseries\fontsize{36}{36}\selectfont 0\thesection};
+      at ([xshift=1.05cm,yshift=-1.78cm]current page.north west)
+      {\color{ModernRed}\sffamily\bfseries\fontsize{13}{15}\selectfont PART \thesection};
     \node[anchor=west,inner sep=0pt]
-      at ([xshift=1.18cm,yshift=-2.58cm]current page.north west)
-      {\color{ModernRed}\sffamily\bfseries\normalsize PART \thesection};
+      at ([xshift=1.05cm,yshift=-3.22cm]current page.north west)
+      {\color{lingnangrey!80!black}\sffamily\bfseries\fontsize{42}{42}\selectfont 0\thesection};
     \node[anchor=west,text width=0.78\paperwidth,align=left,inner sep=0pt]
-      at ([xshift=1.10cm,yshift=-4.00cm]current page.north west)
-      {\color{black}\sffamily\bfseries\fontsize{22}{26}\selectfont\insertsectionhead};
-    \node[anchor=west,text width=0.68\paperwidth,align=left,inner sep=0pt]
-      at ([xshift=1.10cm,yshift=1.52cm]current page.south west)
-      {\color{black!55}\sffamily\footnotesize \insertshortauthor};
-    \node[anchor=west,inner sep=0pt]
-      at ([xshift=1.10cm,yshift=0.55cm]current page.south west)
-      {\color{black!70}\sffamily\scriptsize \insertshorttitle};
+      at ([xshift=3.05cm,yshift=-3.32cm]current page.north west)
+      {\color{ModernInk}\sffamily\bfseries\fontsize{24}{29}\selectfont\insertsectionhead};
     \node[anchor=east,inner sep=0pt]
-      at ([xshift=-1.05cm,yshift=0.55cm]current page.south east)
-      {\color{ModernRed}\sffamily\scriptsize \insertshortdate};
+      at ([xshift=-1.05cm,yshift=-1.78cm]current page.north east)
+      {\color{black!55}\sffamily\footnotesize \insertshortauthor};
+    \node[anchor=west,text width=0.68\paperwidth,align=left,inner sep=0pt]
+      at ([xshift=1.05cm,yshift=0.95cm]current page.south west)
+      {\color{black!60}\sffamily\footnotesize \insertshorttitle};
+    \node[anchor=west,inner sep=0pt]
+      at ([xshift=1.05cm,yshift=0.48cm]current page.south west)
+      {\color{black!62}\sffamily\scriptsize Greenwood, Hercowitz and Krusell (AER, 1997)};
+    \node[anchor=east,inner sep=0pt]
+      at ([xshift=-1.05cm,yshift=0.95cm]current page.south east)
+      {\color{ModernRed}\sffamily\bfseries\scriptsize \insertshortdate};
   \end{tikzpicture}
 }
 
-% Keep sections available for the table of contents and PDF navigation,
-% without adding automatic divider slides to short classroom decks.
+% Show a table-of-contents slide before each section without adding a mini-frame dot.
+\AtBeginSection[]{
+  \begingroup
+  \expandafter\let\csname beamer@writeslidentry\endcsname\relax
+  \begin{frame}[plain,noframenumbering]{目录}
+    \tableofcontents[currentsection,hideallsubsections]
+  \end{frame}
+  \endgroup
+}
 
 % Compact body spacing for classroom slides.
 % This only changes list environments and displayed equations.
