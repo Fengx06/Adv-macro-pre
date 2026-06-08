@@ -60,7 +60,7 @@
               \end{itemize}
         \item 同时，技术蓬勃发展
               \begin{itemize}
-                \item
+                \item 1968 年，Intel；1985 年高通成立
               \end{itemize}
       \end{enumerate}
       \vspace{-0.4em}
@@ -113,6 +113,9 @@
 \end{frame}
 
 \begin{frame}{如何解释？}
+  \begin{itemize}
+    \item 我们的一些尝试：
+  \end{itemize}
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.31\linewidth}
       \centering
@@ -141,7 +144,7 @@
 \end{frame}
 
 \begin{frame}[t]{文中的解释：投资专用技术进步}
-  
+
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.48\linewidth}
       \vspace{2em}
@@ -153,17 +156,17 @@
       \vspace{0.5em}
       \begin{enumerate}
         \item 偏向
-        \begin{itemize}
-          \item 存在\textbf{非中性的}技术进步
-        \end{itemize}
+              \begin{itemize}
+                \item 存在\textbf{非中性的}技术进步
+              \end{itemize}
         \item 投资偏向
-        \begin{itemize}
-        \item 体现在\textbf{新设备的质量提升}和价格下降
-        \item 消费和服务受到的影响较小
-        \item 厂房和基础设施等资本无明显变化
-        \end{itemize}
+              \begin{itemize}
+                \item 体现在\textbf{新设备的质量提升}和价格下降
+                \item 消费和服务受到的影响较小
+                \item 厂房和基础设施等资本无明显变化
+              \end{itemize}
       \end{enumerate}
-      
+
     \end{column}
 
     \begin{column}{0.48\linewidth}
@@ -284,7 +287,7 @@
 \end{frame}
 
 \section{模型求解与参数估计}
-\subsection{竞争均衡与平衡增路径}
+% \subsection{竞争均衡与平衡增路径}
 
 \begin{frame}{模型总结}
   \small
@@ -385,7 +388,7 @@
 \end{frame}
 
 
-\subsection{参数估计}
+% \subsection{参数估计}
 
 \begin{frame}{待估参数}
   % \scriptfont
@@ -706,69 +709,128 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{核心定量结果}
+\begin{frame}
   \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.32\linewidth}
-      \datapill{实际增长}{产出每小时增长约 1.24\%}
+    \begin{column}{0.55\linewidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.9\linewidth]{image/fig6.jpg}
+        \vspace{-1em}
+        \caption{Measureing Netural Technological Chance.}
+      \end{figure}
+      \footnotesize
+      \vspace{-1em}
+      实线：考虑 $q$ 的消费约束（$C'-I''$）\\
+      虚线：忽略 $q$ 的消费约束（$C''-I'''$）
     \end{column}
-    \begin{column}{0.32\linewidth}
-      \datapill{只有 $q$}{增长约 0.77\%}
+    \begin{column}{0.41\linewidth}
+      \vspace{2em}
+      \begin{block}{图像解读}
+        \begin{itemize}
+          \item 产出 $A \to A'$
+          \item $C'-I''$ 中性的技术进步（$z \uparrow$）
+                \begin{itemize}
+                  \item 消费约束的平移
+                \end{itemize}
+          \item $C''-I'''$ 偏向的技术进步（$p \downarrow$）
+                \begin{itemize}
+                  \item 消费约束绕$C$的旋转
+                \end{itemize}
+        \end{itemize}
+      \end{block}
+
+      \begin{block}{经济现实}
+        \begin{itemize}
+          \item 忽略 $q$ 将导致 $z$ 的高估
+          \item 高估部分为 $C'-I'$  与 $C''-I'''$ 的距离
+        \end{itemize}
+      \end{block}
     \end{column}
-    \begin{column}{0.32\linewidth}
-      \datapill{只有 $z$}{增长约 0.56\%}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{核心结果}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.3\linewidth}
+      \datapill{实际增长}{增长约 1.24\%}
+    \end{column}
+    \begin{column}{0.3\linewidth}
+      \datapill{$\gamma_z = 0$}{增长约 0.77\%}
+    \end{column}
+    \begin{column}{0.3\linewidth}
+      \datapill{$\gamma_z = 0$}{增长约 0.56\%}
     \end{column}
   \end{columns}
   \vspace{1em}
-  \begin{alertblock}{结论}
-    investment-specific technological change 解释约 58\% 的产出每小时增长，论文中常概括为 approximately 60\%。
-  \end{alertblock}
+  \begin{block}{结论：重新解释增长动力}
+    投资偏向型技术解释增长的 60\%，中性技术增长解释剩余的 40\%
+  \end{block}
 \end{frame}
 
 
 \section{文章启示}
-\subsection{文章价值}
+% \subsection{文章价值}
 \begin{frame}{为什么能发AER？}
+  \small
+  \setlength{\leftmarginii}{1.0em}
+  \setlength{\labelsep}{0.35em}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.45\linewidth}
+      \begin{block}{重要的现实问题}
+        \begin{enumerate}
+          \item 长期增长从哪里来？
+                \begin{itemize}
+                  \scriptsize
+                  \item 资本累计 + 劳动投入 + 技术进步
+                  \item 三者并非相互独立，资本和劳动也可能有技术进步
+                \end{itemize}
+          \item 如何理解索洛悖论？
+                \begin{itemize}
+                  \scriptsize
+                  \item 信息技术的发展，在 TFP 中难以统计
+                  \item 技术的划分足够够细时，就可以观察到
+                \end{itemize}
+        \end{enumerate}
+      \end{block}
+    \end{column}
+
+    \begin{column}{0.5\linewidth}
+      \begin{block}{重要的理论创新}
+        \begin{enumerate}
+          \item 价格指数：技术进步的具象化
+                \begin{itemize}
+                  \scriptsize
+                  \item 将效率提高与价格降低联系起来，技术进步可识别
+                  \item 为研究技术的短期波动和投资冲击提供条件
+                \end{itemize}
+          \item 结构转型：单部门到多部门
+                \begin{itemize}
+                  \scriptsize
+                  \item 将资本进行分类，并赋予价格、质量和技术等差异
+                  \item 已经有多部门的雏形，是后续经济结构相关研究的基础
+                \end{itemize}
+        \end{enumerate}
+      \end{block}
+    \end{column}
+  \end{columns}
 
 \end{frame}
 
-\begin{frame}{为什么如此高引用？}
 
-\end{frame}
+\begin{frame}{我们的启发}
 
-\subsection{中国与当下}
-\begin{frame}{中国问题}
-  \begin{itemize}
-    \item \focus{资本异质性}：不能把所有资本简单聚合为一个 $K$，不同资本品承载不同技术进步。
-    \item \focus{测量优先}：价格指数、质量调整和 deflator 选择会改变增长核算结论。
-    \item \focus{AI 与数字资本}：如果 AI、软件、数据中心算力类似 embodied technology，价格和质量测度将再次成为核心。
-    \item \focus{生产率放缓}：观察到的 TFP slowdown 可能部分来自技术进步形式变化与测量错位。
-  \end{itemize}
-\end{frame}
 
-\begin{frame}{当下研究}
-  \begin{block}{一个现代化读法}
-    Greenwood et al. (1997) 提醒我们：当新资本品快速变便宜、质量快速上升时，研究重点不只是“TFP 有没有变快”，而是“技术进步 embodied 在哪里、价格是否正确测到、谁在积累这些资本”。
-  \end{block}
-  \begin{itemize}
-    \item 无形资本与软件投资如何计量？
-    \item AI capital 与传统 equipment capital 是否有类似机制？
-    \item 结构转型中，不同部门资本品价格变化如何影响总量增长？
-  \end{itemize}
-
-  \begin{block}{理解结构}
-    变量的非对称性影响？
-  \end{block}
+  \begin{enumerate}
+    \item 变量（$k$）的结构划分
+    \item 冲击的非对称性影响（$q$）
+  \end{enumerate}
 \end{frame}
 
 
-
-
-
-
-\begin{frame}[allowframebreaks]{参考文献}
-  \nocite{greenwood1997longrun}
-  \bibliographystyle{apalike}
-  \bibliography{references}
-\end{frame}
+% \begin{frame}[allowframebreaks]{参考文献}
+%   \nocite{greenwood1997longrun}
+%   \bibliographystyle{apalike}
+%   \bibliography{references}
+% \end{frame}
 
 \end{document}
