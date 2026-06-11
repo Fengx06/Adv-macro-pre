@@ -3,6 +3,8 @@
 \usetheme{lingnan}
 
 \graphicspath{{../Long-Run Implications of Investment-Specific Technological Change/images/}}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
 
 \makeatletter
 \renewcommand{\lingnansectionnav}{%
@@ -868,6 +870,78 @@
   \end{columns}
 
 \end{frame}
+
+\begin{frame}
+  \begin{figure}
+    \centering
+      \includegraphics[width=\linewidth,keepaspectratio]{\detokenize{image/文献综述.png}}
+      \caption{后续研究}
+  \end{figure}
+  
+\end{frame}
+
+
+% \begin{frame}{文献拓展：从投资效率到宏观结构}
+%   \centering
+%   \small
+%   \begin{tikzpicture}[
+%     center/.style={
+%       rectangle,
+%       rounded corners,
+%       draw=red!60!black,
+%       fill=red!8,
+%       text width=3.55cm,
+%       align=center,
+%       inner sep=6pt,
+%       minimum height=1.45cm
+%     },
+%     branch/.style={
+%       rectangle,
+%       rounded corners,
+%       draw=black!35,
+%       fill=black!3,
+%       text width=8.65cm,
+%       align=left,
+%       inner sep=6pt
+%     },
+%     arrow/.style={->, thick, draw=black!55, shorten >=2pt, shorten <=2pt}
+%   ]
+
+%     \node[center] (ghk) at (-4.92,0) {
+%       \textbf{Greenwood et al. (1997)}\\
+%       \scriptsize
+%       投资品相对价格下降——投资特定技术进步\\
+%     };
+
+%     \node[branch] (growth) at (2.02,2.18) {
+%       \textbf{经济增长}\\
+%       \scriptsize
+%       \textbf{增长核算：}重新构造质量调整价格指数、引入中间品和投入产出结构、引入趋势断点和样本异质性、分析国家间增长率差异\\
+%       Oulton (2007), Cummins--Violante (2002), Ngai--Samaniego (2009), Moura (2023)\\
+%       \textbf{内生增长：}通过引入研发部分将投资特定技术进步内生化\\
+%       Krusell (1998), Huffman (2007)
+%     };
+
+%     \node[branch] (cycle) at (2.02,0) {
+%       \textbf{经济波动}\\
+%       \scriptsize
+%       \textbf{识别冲击：}将投资品相对价格用于识别经济周期中的投资品技术冲击，研究冲击对产出、劳动、投资、TFP波动的影响\\
+%       Greenwood et al. (2000), Boileau (2002), Fisher (2006), Chen \& Wemy (2015)
+%     };
+
+%     \node[branch] (structure) at (2.02,-2.02) {
+%       \textbf{结构转型}\\
+%       \scriptsize
+%       \textbf{投资结构：}不同产业部门的投资技术进步存在差异，从而推动产业结构转型\\
+%       Herrendorf et al. (2021), Garcia-Santana et al. (2021), Guo et al. (2021)
+%     };
+
+%     \draw[arrow] (ghk) -- (growth);
+%     \draw[arrow] (ghk) -- (cycle);
+%     \draw[arrow] (ghk) -- (structure);
+
+%   \end{tikzpicture}
+% \end{frame}
 
 
 \begin{frame}{我们的启发}
