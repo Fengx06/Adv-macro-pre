@@ -16,7 +16,6 @@ slides/missfont.log
 .gitignore
 slides/Greenwood 1997 aer.fls
 slides/Greenwood 1997 aer.fdb_latexmk
-其它文献素材/*
 
 slides/.DS_Store
 .DS_Store
