@@ -136,14 +136,14 @@
 \IfFontExistsTF{Cascadia Code}{
   \setmonofont{Cascadia Code}
 }{
-  \IfFontExistsTF{Consolas}{
-    \setmonofont{Consolas}
+  \IfFontExistsTF{Menlo}{
+    \setmonofont{Menlo}
   }{
-    \IfFontExistsTF{Menlo}{
-      \setmonofont{Menlo}
+    \IfFontExistsTF{Monaco}{
+      \setmonofont{Monaco}
     }{
-      \IfFontExistsTF{Monaco}{
-        \setmonofont{Monaco}
+      \IfFontExistsTF{Consolas}{
+        \setmonofont{Consolas}
       }{
         \setmonofont{Latin Modern Mono}
       }
@@ -157,25 +157,33 @@
   \setmathfont{texgyretermes-math.otf}
 }
 
-\IfFontExistsTF{Kaiti SC}{
-  \setCJKmainfont{Kaiti SC}[AutoFakeBold=2.0]
+\IfFontExistsTF{Songti SC}{
+  \setCJKmainfont{Songti SC}[AutoFakeBold=2.0]
 }{
-  \IfFontExistsTF{Songti SC}{
-    \setCJKmainfont{Songti SC}[AutoFakeBold=2.0]
+  \IfFontExistsTF{Source Han Serif SC}{
+    \setCJKmainfont{Source Han Serif SC}[AutoFakeBold=2.0]
   }{
-    \IfFontExistsTF{KaiTi}{
-      \setCJKmainfont{KaiTi}[AutoFakeBold=2.0]
+    \IfFontExistsTF{Noto Serif CJK SC}{
+      \setCJKmainfont{Noto Serif CJK SC}[AutoFakeBold=2.0]
     }{
-      \IfFontExistsTF{STKaiti}{
-        \setCJKmainfont{STKaiti}[AutoFakeBold=2.0]
+      \IfFontExistsTF{STZhongsong}{
+        \setCJKmainfont{STZhongsong}[AutoFakeBold=2.0]
       }{
-        \IfFontExistsTF{STFangsong}{
-          \setCJKmainfont{STFangsong}[AutoFakeBold=2.0]
+        \IfFontExistsTF{PingFang SC}{
+          \setCJKmainfont{PingFang SC}[AutoFakeBold=2.0]
         }{
-          \IfFontExistsTF{Microsoft YaHei}{
-            \setCJKmainfont{Microsoft YaHei}
+          \IfFontExistsTF{KaiTi}{
+            \setCJKmainfont{KaiTi}[AutoFakeBold=2.0]
           }{
-            \setCJKmainfont{FandolSong-Regular.otf}
+            \IfFontExistsTF{STKaiti}{
+              \setCJKmainfont{STKaiti}[AutoFakeBold=2.0]
+            }{
+              \IfFontExistsTF{Microsoft YaHei}{
+                \setCJKmainfont{Microsoft YaHei}
+              }{
+                \setCJKmainfont{FandolSong-Regular.otf}
+              }
+            }
           }
         }
       }
@@ -183,22 +191,26 @@
   }
 }
 
-\IfFontExistsTF{PingFang SC}{
-  \setCJKsansfont{PingFang SC}[AutoFakeBold=2.0]
+\IfFontExistsTF{Songti SC}{
+  \setCJKsansfont{Songti SC}[AutoFakeBold=2.0]
 }{
-  \IfFontExistsTF{Heiti SC}{
-    \setCJKsansfont{Heiti SC}[AutoFakeBold=2.0]
+  \IfFontExistsTF{Source Han Serif SC}{
+    \setCJKsansfont{Source Han Serif SC}[AutoFakeBold=2.0]
   }{
-    \IfFontExistsTF{STZhongsong}{
-      \setCJKsansfont{STZhongsong}[AutoFakeBold=2.0]
+    \IfFontExistsTF{Noto Serif CJK SC}{
+      \setCJKsansfont{Noto Serif CJK SC}[AutoFakeBold=2.0]
     }{
-      \IfFontExistsTF{Source Han Serif SC}{
-        \setCJKsansfont{Source Han Serif SC}[AutoFakeBold=2.0]
+      \IfFontExistsTF{STZhongsong}{
+        \setCJKsansfont{STZhongsong}[AutoFakeBold=2.0]
       }{
-        \IfFontExistsTF{Microsoft YaHei}{
-          \setCJKsansfont{Microsoft YaHei}
+        \IfFontExistsTF{PingFang SC}{
+          \setCJKsansfont{PingFang SC}[AutoFakeBold=2.0]
         }{
-          \setCJKsansfont{FandolHei-Regular.otf}
+          \IfFontExistsTF{Microsoft YaHei}{
+            \setCJKsansfont{Microsoft YaHei}
+          }{
+            \setCJKsansfont{FandolHei-Regular.otf}
+          }
         }
       }
     }
@@ -230,7 +242,8 @@
 \setbeamerfont{section title}{family=\sffamily}
 \setbeamerfont{section in head/foot}{family=\lingnanheadinglatinfont,series=\bfseries,size=\tiny}
 \setbeamerfont{date}{size=\footnotesize}
-\setbeamerfont{block title}{family=\sffamily,size=\small}
+\setbeamerfont{normal text}{size=\small}
+\setbeamerfont{block title}{family=\sffamily,size=\normalsize}
 \setbeamerfont{block body}{size=\small}
 \setcounter{tocdepth}{1}
 \setbeamertemplate{caption}[numbered]
