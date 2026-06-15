@@ -157,31 +157,35 @@
   \setmathfont{texgyretermes-math.otf}
 }
 
-\IfFontExistsTF{Songti SC}{
-  \setCJKmainfont{Songti SC}[AutoFakeBold=2.0]
+\IfFontExistsTF{STZhongsong}{
+  \setCJKmainfont{STZhongsong}[AutoFakeBold=2.0]
 }{
-  \IfFontExistsTF{Source Han Serif SC}{
-    \setCJKmainfont{Source Han Serif SC}[AutoFakeBold=2.0]
+  \IfFontExistsTF{华文中宋}{
+    \setCJKmainfont{华文中宋}[AutoFakeBold=2.0]
   }{
-    \IfFontExistsTF{Noto Serif CJK SC}{
-      \setCJKmainfont{Noto Serif CJK SC}[AutoFakeBold=2.0]
+    \IfFontExistsTF{Songti SC}{
+      \setCJKmainfont{Songti SC}[AutoFakeBold=2.0]
     }{
-      \IfFontExistsTF{STZhongsong}{
-        \setCJKmainfont{STZhongsong}[AutoFakeBold=2.0]
+      \IfFontExistsTF{Source Han Serif SC}{
+        \setCJKmainfont{Source Han Serif SC}[AutoFakeBold=2.0]
       }{
-        \IfFontExistsTF{PingFang SC}{
-          \setCJKmainfont{PingFang SC}[AutoFakeBold=2.0]
+        \IfFontExistsTF{Noto Serif CJK SC}{
+          \setCJKmainfont{Noto Serif CJK SC}[AutoFakeBold=2.0]
         }{
-          \IfFontExistsTF{KaiTi}{
-            \setCJKmainfont{KaiTi}[AutoFakeBold=2.0]
+          \IfFontExistsTF{PingFang SC}{
+            \setCJKmainfont{PingFang SC}[AutoFakeBold=2.0]
           }{
-            \IfFontExistsTF{STKaiti}{
-              \setCJKmainfont{STKaiti}[AutoFakeBold=2.0]
+            \IfFontExistsTF{KaiTi}{
+              \setCJKmainfont{KaiTi}[AutoFakeBold=2.0]
             }{
-              \IfFontExistsTF{Microsoft YaHei}{
-                \setCJKmainfont{Microsoft YaHei}
+              \IfFontExistsTF{STKaiti}{
+                \setCJKmainfont{STKaiti}[AutoFakeBold=2.0]
               }{
-                \setCJKmainfont{FandolSong-Regular.otf}
+                \IfFontExistsTF{Microsoft YaHei}{
+                  \setCJKmainfont{Microsoft YaHei}
+                }{
+                  \setCJKmainfont{FandolSong-Regular.otf}
+                }
               }
             }
           }
@@ -191,25 +195,29 @@
   }
 }
 
-\IfFontExistsTF{Songti SC}{
-  \setCJKsansfont{Songti SC}[AutoFakeBold=2.0]
+\IfFontExistsTF{STZhongsong}{
+  \setCJKsansfont{STZhongsong}[AutoFakeBold=2.0]
 }{
-  \IfFontExistsTF{Source Han Serif SC}{
-    \setCJKsansfont{Source Han Serif SC}[AutoFakeBold=2.0]
+  \IfFontExistsTF{华文中宋}{
+    \setCJKsansfont{华文中宋}[AutoFakeBold=2.0]
   }{
-    \IfFontExistsTF{Noto Serif CJK SC}{
-      \setCJKsansfont{Noto Serif CJK SC}[AutoFakeBold=2.0]
+    \IfFontExistsTF{Songti SC}{
+      \setCJKsansfont{Songti SC}[AutoFakeBold=2.0]
     }{
-      \IfFontExistsTF{STZhongsong}{
-        \setCJKsansfont{STZhongsong}[AutoFakeBold=2.0]
+      \IfFontExistsTF{Source Han Serif SC}{
+        \setCJKsansfont{Source Han Serif SC}[AutoFakeBold=2.0]
       }{
-        \IfFontExistsTF{PingFang SC}{
-          \setCJKsansfont{PingFang SC}[AutoFakeBold=2.0]
+        \IfFontExistsTF{Noto Serif CJK SC}{
+          \setCJKsansfont{Noto Serif CJK SC}[AutoFakeBold=2.0]
         }{
-          \IfFontExistsTF{Microsoft YaHei}{
-            \setCJKsansfont{Microsoft YaHei}
+          \IfFontExistsTF{PingFang SC}{
+            \setCJKsansfont{PingFang SC}[AutoFakeBold=2.0]
           }{
-            \setCJKsansfont{FandolHei-Regular.otf}
+            \IfFontExistsTF{Microsoft YaHei}{
+              \setCJKsansfont{Microsoft YaHei}
+            }{
+              \setCJKsansfont{FandolHei-Regular.otf}
+            }
           }
         }
       }
